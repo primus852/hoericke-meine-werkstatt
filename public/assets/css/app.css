@@ -1611,8 +1611,9 @@ div.sidewrapper.sidenav {
 .page-title {
     position: relative;
     background-color: #f8f8f8;
-    padding: 3rem 0 3rem;
-    border-bottom: 1px dashed #e2e2e2;
+    padding: 1rem 0 1rem;
+    border-top: 1px dashed #e2e2e2;
+    height: 120px;
 }
 
 .page-title h1 {
