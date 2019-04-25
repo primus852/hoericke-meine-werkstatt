@@ -1,0 +1,26 @@
+{
+  "name": "hoericke",
+  "version": "1.0.0",
+  "description": "Hoericke Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.10.34/root/hoericke.git"
+  },
+  "keywords": [
+    "hoericke"
+  ],
+  "author": "Torsten Wolter <tw@mitscom.de>",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.4.0",
+    "jquery-sticky": "^1.0.4",
+    "popper.js": "^1.15.0"
+  }
+}

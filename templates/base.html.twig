@@ -1,12 +1,266 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Site Metas -->
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i,600,700" rel="stylesheet">
+    <link href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('node_modules/animate.css/animate.min.css') }}" rel="stylesheet">
+
+    {% block stylesheets %}{% endblock %}
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!-- LOADER -->
+<div id="preloader">
+    <img class="preloader" src="{{ asset('assets/img/loader.gif') }}" alt="Hoericke Loader">
+</div>
+<!-- END LOADER -->
+<div id="wrapper">
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#matildamenu" aria-controls="matildamenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="matildamenu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Leistungen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Die Werkstatt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sponsoring</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kontakt</a>
+                        </li>
+                    </ul>
+                    <div class="social">
+                        <a href="https://www.facebook.com/pages/H%C3%B6ricke-MEINE-Werkstatt/189769644530576?fref=ts" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <div class="menu-right">
+                        <a href="tel:+4933284799090" data-toggle="tooltip" data-placement="bottom" title="Jetzt Anrufen"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a>
+                        <a href="mailto:info@hoerickemeinewerkstatt.de" data-toggle="tooltip" data-placement="bottom" title="Jetzt Schreiben"><i class="fa fa-envelope"></i> info[at]hoerickemeinewerkstatt.de</a>
+                    </div>
+                </div>
+            </nav>
+            <!--
+            <nav class="navbar-nav navbar-inverse nav flex-column flex-sm-row">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#matildamenu" aria-controls="matildamenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="matildamenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active dropdown has-submenu">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                <li><a class="dropdown-item" href="index.html">Home Default Sidebar</a></li>
+                                <li><a class="dropdown-item" href="index-fullwidth.html">Home Default Fullwidth</a></li>
+                                <li><a class="dropdown-item" href="index-01.html">Home Grid Fullwidth</a></li>
+                                <li><a class="dropdown-item" href="index-02.html">Home Grid Sidebar</a></li>
+                                <li><a class="dropdown-item" href="index-03.html">Home List Fullwidth</a></li>
+                                <li><a class="dropdown-item" href="index-04.html">Home List Sidebar</a></li>
+                                <li><a class="dropdown-item" href="index-05.html">Home Magazine Style</a></li>
+                                <li><a class="dropdown-item" href="index-06.html">Home Portfolio Style</a></li>
+                                <li><a class="dropdown-item" href="index-07.html">Home Creative Style</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown has-submenu">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                                <li><a class="dropdown-item" href="single.html">Single Blog <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="single.html">Single Default</a></li>
+                                        <li><a class="dropdown-item" href="single-fullwidth.html">Single Fullwidth</a></li>
+                                        <li><a class="dropdown-item" href="single-slider.html">Single Gallery</a></li>
+                                        <li><a class="dropdown-item" href="single-video.html">Single Video</a></li>
+                                        <li><a class="dropdown-item" href="single-audio.html">Single Audio</a></li>
+                                        <li><a class="dropdown-item" href="single-no-media.html">Single No Media</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="blog-category-01.html">Blog Category List</a></li>
+                                <li><a class="dropdown-item" href="blog-category-02.html">Blog Category Grid</a></li>
+                                <li><a class="dropdown-item" href="blog-author.html">Blog Author</a></li>
+                                <li><a class="dropdown-item" href="page.html">Default Page</a></li>
+                                <li><a class="dropdown-item" href="page-fullwidth.html">Fullwidth Page</a></li>
+                                <li><a class="dropdown-item" href="page-404.html">Not Found Page</a></li>
+                                <li><a class="dropdown-item" href="page-sitemap.html">Sitemap & Archives</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown has-submenu">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                                <li><a class="dropdown-item" href="shop.html">Shop Layout</a></li>
+                                <li><a class="dropdown-item" href="shop-01.html">Shop Layout Alt</a></li>
+                                <li><a class="dropdown-item" href="shop-single.html">Shop Single</a></li>
+                                <li><a class="dropdown-item" href="shop-checkout.html">Shop Checkout</a></li>
+                                <li><a class="dropdown-item" href="shop-cart.html">Shopping Cart</a></li>
+                                <li><a class="dropdown-item" href="shop-account.html">My Account</a></li>
+                                <li><a class="dropdown-item" href="shop-login.html">Login & Register</a></li>
+                                <li><a class="dropdown-item" href="shop-tracking.html">Order Tracking</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog-category-01.html">LifeStyle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog-category-01.html">Travel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-contact.html">Contact Me</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav navbar-nav ml-auto hidden-md-down hidden-sm-down hidden-xs-down">
+                        <div class="social">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                        </div>
+
+                        <div class="menu-right">
+                            <a href="shop-cart.html" data-toggle="tooltip" data-placement="bottom" title="View Cart"><i class="fa fa-shopping-cart"></i></a>
+                            <a id="nav-expander" href="#" data-toggle="tooltip" data-placement="bottom" title="Open Right Menu"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            -->
+        </div><!-- end container -->
+    </header><!-- end header -->
+
+    <div class="header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo">
+                        <a href="{{ path('default') }}"><img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="Höricke Meine Werkstatt Logo"></a>
+                    </div><!-- end logo -->
+                </div>
+            </div><!-- end row -->
+        </div><!-- end header-logo -->
+    </div><!-- end header -->
+    {% block body %}{% endblock %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3><span><i class="fa fa-home"></i> Kontakt</span></h3>
+                        </div>
+                        <div class="category-widget">
+                            Höricke meine Werkstatt
+                            <br/>
+                            Oderstraße 20
+                            <br/>
+                            14513 Teltow
+                            <br/>
+                            <br/>
+                            <a href="tel:+4933284799090"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a>
+                            <br/>
+                            <a href="mailto:info@hoerickemeinewerkstatt.de"><i class="fa fa-envelope"></i> info[at]hoerickemeinewerkstatt.de</a>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3><span><i class="fa fa-clock-o"></i> Öffnungszeiten</span></h3>
+                        </div>
+
+                        <div class="category-widget">
+                            <div class="row d-flex">
+                                <div class="col">
+                                    Montag<br>
+                                    Dienstag<br>
+                                    Mittwoch<br>
+                                    Donnerstag<br>
+                                    Freitag<br>
+                                    Samstag<br>
+                                    Sonntag
+                                </div>
+                                <div class="col-7">
+                                    07:00 Uhr - 20:00 Uhr<br>
+                                    07:00 Uhr - 20:00 Uhr<br>
+                                    07:00 Uhr - 20:00 Uhr<br>
+                                    07:00 Uhr - 20:00 Uhr<br>
+                                    07:00 Uhr - 20:00 Uhr<br>
+                                    09:00 Uhr - 13:00 Uhr<br>
+                                    geschlossen
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3><span><i class="fa fa-link"></i> Schnelllinks</span></h3>
+                        </div>
+                        <div class="category-widget">
+                            <ul>
+                                <li><a href="#">Online Räderwechsel</a></li>
+                                <li><a href="#">Whatsapp</a></li>
+                                <li><a href="#">Galerie</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy_right_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        © 2019 Höricke meine Werkstatt GmbH | <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">AGB</a> | Made with <i class="fa fa-heart"></i> by <a href="https://www.mitscom.de">MITSCom</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- end footer -->
+</div>
+<script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
+<script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('node_modules/jquery-sticky/jquery.sticky.js') }}"></script>
+{% block javascripts %}{% endblock %}
+<script src="{{ asset('assets/js/app.js') }}"></script>
+</body>
 </html>
