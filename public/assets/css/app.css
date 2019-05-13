@@ -136,7 +136,7 @@ a {
 .header-section {
     padding: 0;
     margin-bottom: 3rem;
-    border-bottom: 1px dashed #e2e2e2;
+
 }
 .logo{
     /*background-image: url('../img/bg-header.png');*/
@@ -2317,4 +2317,11 @@ a:focus,
     .section.wb {
         display: none;
     }
+}
+
+.leistung-box{
+    position: absolute;
+    margin-top:10px;
+    font-size:1.1rem;
+    font-weight:300;
 }

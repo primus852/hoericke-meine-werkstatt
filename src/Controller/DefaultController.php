@@ -16,4 +16,22 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
+
+    /**
+     * @Route("/leistungen", name="leistungen")
+     */
+    public function leistungen()
+    {
+        return $this->render('default/leistungen.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/leistungen2", name="leistungen2")
+     */
+    public function leistungen2()
+    {
+        return $this->render('default/leistungen2.html.twig', [
+        ]);
+    }
 }
