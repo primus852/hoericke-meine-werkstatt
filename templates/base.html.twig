@@ -22,6 +22,8 @@
     <link href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('node_modules/simplelightbox/dist/simplelightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/sticky.min.css') }}" rel="stylesheet">
 
     {% block stylesheets %}{% endblock %}
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
@@ -32,12 +34,19 @@
     <![endif]-->
 
 </head>
-<body>
-<!-- LOADER -->
+<a>
 <div id="preloader">
     <img class="preloader" src="{{ asset('assets/img/loader.gif') }}" alt="Hoericke Loader">
 </div>
-<!-- END LOADER -->
+
+<!--- UPDATE BANNER -->
+<span class="pinned p-fru"></span>
+<!--- UPDATE BANNER /--->
+
+<!--- UPDATE WERKSTATT -->
+<a href="https://www.werkstatt-des-vertrauens.de/" target="_blank"><span class="pinned-banner"></span></a>
+<!--- UPDATE WERKSTATT /--->
+
 <div id="wrapper">
 
     <header class="header">
@@ -58,7 +67,7 @@
                             <a class="nav-link" href="#">Die Werkstatt</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sponsoring</a>
+                            <a class="nav-link" href="{{ path('sponsoring') }}">Sponsoring</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Kontakt</a>
@@ -70,7 +79,7 @@
                     </div>
                     <div class="menu-right">
                         <a href="tel:+4933284799090" data-toggle="tooltip" data-placement="bottom" title="Jetzt Anrufen"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a>
-                        <a href="mailto:info@hoerickemeinewerkstatt.de" data-toggle="tooltip" data-placement="bottom" title="Jetzt Schreiben"><i class="fa fa-envelope"></i> info[at]hoerickemeinewerkstatt.de</a>
+                        <a href="mailto:info@hoerickemeinewerkstatt.de" data-toggle="tooltip" data-placement="bottom" title="Jetzt Schreiben"><i class="fa fa-envelope"></i> info@hoerickemeinewerkstatt.de</a>
                     </div>
                 </div>
             </nav>
@@ -179,16 +188,16 @@
     <div class="page-title">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-3 text-center">
+                <div class="col-12 col-md-3 text-center">
                     <img src="{{ asset('assets/img/partner/DEVK-Logo.png') }}" class="img-thumbnail" alt="DEVK Logo" style="max-height:90px;">
                 </div>
-                <div class="col-lg-3 text-center">
+                <div class="col-12 col-md-3 text-center">
                     <img src="{{ asset('assets/img/partner/huk.jpg') }}" class="img-thumbnail" alt="HUK Logo" style="max-height:90px;">
                 </div>
-                <div class="col-lg-3 text-center">
+                <div class="col-12 col-md-3 text-center">
                     <img src="{{ asset('assets/img/partner/profiservice.png') }}" class="img-thumbnail" alt="ProfiService Logo" style="max-height:90px;">
                 </div>
-                <div class="col-lg-3 text-center">
+                <div class="col-12 col-md-3 text-center">
                     <img src="{{ asset('assets/img/partner/tuev-rheinland.png') }}" class="img-thumbnail" alt="TÜV Logo" style="max-height:90px;">
                 </div>
             </div>
@@ -212,7 +221,7 @@
                             <br/>
                             <a href="tel:+4933284799090"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a>
                             <br/>
-                            <a href="mailto:info@hoerickemeinewerkstatt.de"><i class="fa fa-envelope"></i> info[at]hoerickemeinewerkstatt.de</a>
+                            <a href="mailto:info@hoerickemeinewerkstatt.de"><i class="fa fa-envelope"></i> info@hoerickemeinewerkstatt.de</a>
 
 
                         </div>
@@ -268,7 +277,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        © 2019 Höricke meine Werkstatt GmbH | <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">AGB</a> | Made with <i class="fa fa-heart"></i> by <a href="https://www.mitscom.de">MITSCom</a>
+                        © {{ "now"|date('Y') }} Höricke meine Werkstatt GmbH | <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">AGB</a> | Made with <i class="fa fa-heart"></i> by <a href="https://www.mitscom.de">MITSCom</a>
                     </div>
                 </div>
             </div>
@@ -279,6 +288,7 @@
 <script src="{{ asset('node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
 <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('node_modules/jquery-sticky/jquery.sticky.js') }}"></script>
+<script src="{{ asset('node_modules/simplelightbox/dist/simple-lightbox.min.js') }}"></script>
 {% block javascripts %}{% endblock %}
 <script src="{{ asset('assets/js/app.js') }}"></script>
 </body>

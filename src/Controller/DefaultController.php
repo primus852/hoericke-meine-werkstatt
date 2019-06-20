@@ -23,15 +23,16 @@ class DefaultController extends AbstractController
     public function leistungen()
     {
         return $this->render('default/leistungen.html.twig', [
+
         ]);
     }
 
     /**
-     * @Route("/leistungen2", name="leistungen2")
+     * @Route("/sponsoring", name="sponsoring")
      */
-    public function leistungen2()
+    public function sponsoring()
     {
-        return $this->render('default/leistungen2.html.twig', [
+        return $this->render('default/sponsoring.html.twig', [
         ]);
     }
 }

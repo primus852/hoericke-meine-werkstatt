@@ -14,6 +14,9 @@
             responsiveWidth: true,
             zIndex: 15
         });
+
+        var lightbox = $('.gallery a').simpleLightbox();
+
     });
 
     $(function () {

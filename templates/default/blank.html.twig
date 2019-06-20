@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Höricke meine Werkstatt - TITEL{% endblock %}
+
+{% block body %}
+    <section class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="content col-lg-12">
+                    <div class="blog-box row list-style clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="blog-desc">
+                                <span class="cat-title">SUBHEADER</span>
+                                <h4>HEADER</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-box row list-style clearfix">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <div class="blog-media">
+                                <img src="{{ asset('assets/img/inspektion.jpg') }}" alt="Höricke Werkstatt" class="img-fluid img-thumbnail">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="blog-desc">
+                                <span class="cat-title">Artikel 1 - Sub</span>
+                                <h4>Artikel 1</h4>
+                                <p>
+                                    TEXT
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
