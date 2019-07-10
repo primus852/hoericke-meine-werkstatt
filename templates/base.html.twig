@@ -23,6 +23,7 @@
     <link href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/animate.css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/simplelightbox/dist/simplelightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('node_modules/jquery-roadmap/dist/jquery.roadmap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/sticky.min.css') }}" rel="stylesheet">
 
     {% block stylesheets %}{% endblock %}
@@ -34,7 +35,6 @@
     <![endif]-->
 
 </head>
-<a>
 <div id="preloader">
     <img class="preloader" src="{{ asset('assets/img/loader.gif') }}" alt="Hoericke Loader">
 </div>
@@ -58,24 +58,27 @@
                 <div class="collapse navbar-collapse" id="matildamenu">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Start</a>
+                            <a class="nav-link" href="{{ path('default') }}">Start</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('leistungen') }}">Leistungen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Die Werkstatt</a>
+                            <a class="nav-link" href="{{ path('werkstatt') }}">Die Werkstatt</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('sponsoring') }}">Sponsoring</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kontakt</a>
+                            <a class="nav-link" href="{{ path('geschichte') }}">Geschichte</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('kontakt') }}">Kontakt</a>
                         </li>
                     </ul>
                     <div class="social">
-                        <a href="https://www.facebook.com/pages/H%C3%B6ricke-MEINE-Werkstatt/189769644530576?fref=ts" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="https://wa.me/491762324170" data-toggle="tooltip" data-placement="bottom" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/pages/H%C3%B6ricke-MEINE-Werkstatt/189769644530576?fref=ts" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://wa.me/491762324170" target="_blank" data-toggle="tooltip" data-placement="bottom" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
                     </div>
                     <div class="menu-right">
                         <a href="tel:+4933284799090" data-toggle="tooltip" data-placement="bottom" title="Jetzt Anrufen"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a>
@@ -289,6 +292,7 @@
 <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('node_modules/jquery-sticky/jquery.sticky.js') }}"></script>
 <script src="{{ asset('node_modules/simplelightbox/dist/simple-lightbox.min.js') }}"></script>
+<script src="{{ asset('node_modules/jquery-roadmap/dist/jquery.roadmap.min.js') }}"></script>
 {% block javascripts %}{% endblock %}
 <script src="{{ asset('assets/js/app.js') }}"></script>
 </body>

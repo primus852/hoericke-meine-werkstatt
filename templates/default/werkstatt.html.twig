@@ -1,0 +1,216 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Höricke meine Werkstatt - Die Werkstatt{% endblock %}
+
+{% block body %}
+    <section class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="content col-lg-12">
+                    <div class="blog-box row list-style clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="blog-desc">
+                                <span class="cat-title">Wir sind gerne für Sie da</span>
+                                <h4>Die Werkstatt</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-box row list-style clearfix">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <div class="blog-media">
+                                <img src="{{ asset('assets/img/auszeichnung_2018.jpg') }}" alt="Höricke Werkstatt Auszeichnung" class="img-fluid img-thumbnail">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="blog-desc">
+                                <span class="cat-title">Mit Auszeichnung</span>
+                                <h4>Qualität im Werkstattservice</h4>
+                                <p>
+                                    Wir lassen regelmäßig vom TÜV Rheinland unseren Service und unsere Arbeitsqualität überprüfen und wurden Dank sehr guten Testergebnissen bereits 5 Mal mit einer Urkunde belohnt.
+                                </p>
+                                <div class="gallery">
+                                    <div class="row">
+                                        <div class="col-6 col-md-2" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/auszeichnung_2014.jpg') }}">
+                                                <img src="{{ asset('assets/img/auszeichnung_2014.jpg') }}" class="img-fluid img-thumbnail" title="Auszeichnung 2014" alt="TÜV 2014"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 col-md-2" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/auszeichnung_2015.jpg') }}">
+                                                <img src="{{ asset('assets/img/auszeichnung_2015.jpg') }}" class="img-fluid img-thumbnail" title="Auszeichnung 2015" alt="TÜV 2015"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 col-md-2" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/auszeichnung_2016.jpg') }}">
+                                                <img src="{{ asset('assets/img/auszeichnung_2016.jpg') }}" class="img-fluid img-thumbnail" title="Auszeichnung 2016" alt="TÜV 2016"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 col-md-2" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/auszeichnung_2017.jpg') }}">
+                                                <img src="{{ asset('assets/img/auszeichnung_2017.jpg') }}" class="img-fluid img-thumbnail" title="Auszeichnung 2017" alt="TÜV 2017"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 col-md-2" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/auszeichnung_2018.jpg') }}">
+                                                <img src="{{ asset('assets/img/auszeichnung_2018.jpg') }}" class="img-fluid img-thumbnail" title="Auszeichnung 2018" alt="TÜV 2018"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-box row list-style clearfix">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <div class="blog-media">
+                                <img src="{{ asset('assets/img/team_overview.jpg') }}" alt="Höricke Werkstatt Team" class="img-fluid img-thumbnail">
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="blog-desc">
+                                <span class="cat-title">Das Team - Unsere Guten Seelen</span>
+                                <h4>Service und Annahme</h4>
+                                <div class="gallery">
+                                    <div class="row">
+                                        <div class="col-8 text-center" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/team_service.jpg') }}">
+                                                <img src="{{ asset('assets/img/team_service.jpg') }}" class="img-fluid img-thumbnail" title="Team Service Höricke" alt="Service Höricke"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-4" style="line-height: 17px;">
+                                            (v.l.n.r.)
+                                            <br/>
+                                            <br/>
+                                            <strong>Annika Haack</strong><br/><span style="font-style: italic;">Automobilkauffrau</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Rico Schneider</strong><br/><span style="font-style: italic;">Werkstattmeister</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Anne Schiller</strong><br/><span style="font-style: italic;">Automobilkauffrau / Serviceleiterin</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Marcus Schmidt-Jäkel</strong><br/><span style="font-style: italic;">Service Mitarbeiter</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Pauline Bemme</strong><br/><span style="font-style: italic;">Auszubildende Automobilkauffrau</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Torsten Höricke</strong><br/><span style="font-style: italic;">Inhaber und Geschäftsführer</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="blog-desc">
+                                <h4>Das Werkstatt-Team</h4>
+                                <div class="gallery">
+                                    <div class="row">
+                                        <div class="col-8 text-center" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/team_werkstatt.jpg') }}">
+                                                <img src="{{ asset('assets/img/team_werkstatt.jpg') }}" class="img-fluid img-thumbnail" title="Team Werkstatt Höricke" alt="Werkstatt Höricke"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-4" style="line-height: 17px;">
+                                            (v.l.n.r.)
+                                            <br/>
+                                            <br/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="blog-desc">
+                                <h4>Karosserie-Team</h4>
+                                <div class="gallery">
+                                    <div class="row">
+                                        <div class="col-8 text-center" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/team_karosserie.jpg') }}">
+                                                <img src="{{ asset('assets/img/team_karosserie.jpg') }}" class="img-fluid img-thumbnail" title="Team Karosserie Höricke" alt="Karosserie Höricke"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-4" style="line-height: 17px;">
+                                            (v.l.n.r.)
+                                            <br/>
+                                            <br/>
+                                            <strong>Adnan Zeidan</strong><br/><span style="font-style: italic;">Auszubildender Mechaniker der Karosserieinstandhaltung</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Denny Lüdecke</strong><br/><span style="font-style: italic;">Schichtleiter Karosserieabteilung / Fachkraft für Karosserieinstandhaltung</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Jörg Schulz</strong><br/><span style="font-style: italic;">Karosseriebaumeister</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Robert Marten</strong><br/><span style="font-style: italic;">Fachkraft für Karosserieinstandhaltung</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="blog-desc">
+                                <h4>Unsere Zukunft - Die Auszubildenden</h4>
+                                <div class="gallery">
+                                    <div class="row">
+                                        <div class="col-8 text-center" style="padding-bottom:10px;">
+                                            <a href="{{ asset('assets/img/team_azubis.jpg') }}">
+                                                <img src="{{ asset('assets/img/team_azubis.jpg') }}" class="img-fluid img-thumbnail" title="Team Azubis Höricke" alt="Azubis Höricke"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-4" style="line-height: 17px;">
+                                            (v.l.n.r.)
+                                            <br/>
+                                            <br/>
+                                            <strong>Adnan Zeidan</strong><br/><span style="font-style: italic;">Auszubildender Mechaniker der Karosserieinstandhaltung</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Pauline Bemme</strong><br/><span style="font-style: italic;">Auszubildende Automobilkauffrau</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Constantin Bocher</strong><br/><span style="font-style: italic;">Auszubildender Kfz-Mechatroniker</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Marcel Bräutigam</strong><br/><span style="font-style: italic;">Auszubildender Kfz-Mechatroniker</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Marcel Pazdziorko</strong><br/><span style="font-style: italic;">Auszubildender Kfz-Mechatroniker</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Andreas Ribbecke</strong><br/><span style="font-style: italic;">Auszubildender Mechaniker der Karosserieinstandhaltung</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                            <strong>Justus Nonnemann</strong><br/><span style="font-style: italic;">Auszubildender Kfz-Mechatroniker</span>
+                                            <hr style="margin-top:0.2rem;margin-bottom:0.2rem;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-box row list-style clearfix">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <div class="blog-media">
+                                <img src="{{ asset('assets/img/mietwagenflotte.jpg') }}" alt="Höricke Werkstatt" class="img-fluid img-thumbnail">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="blog-desc">
+                                <span class="cat-title">Modern und zuverlässig</span>
+                                <h4>Unsere Werkstattersatzwagenflotte</h4>
+                                <p>
+                                    Das Werkstattersatzfahrzeug ist im Rahmen der Inspektion gratis.<br/>
+                                    Es stehen 2 &frac12; Fahrzeugklassen zur Auswahl:<br/>
+                                    <br/>
+                                    <strong>Klasse 1</strong> (4-türige Fahrzeuge)<br/>
+                                    <span style="font-style: italic;">VW UP, VW Polo, Hyundai i20</span>
+                                    <br/>
+                                    <br/>
+                                    <strong>Klasse 2</strong> (größere Fahrzeuge)<br/>
+                                    <span style="font-style: italic;">Hyundai i30, Skoda Rapid, VW Touran, Mercedes e-Smart, Skoda Octavia und Audi A1</span>
+                                    <br/>
+                                    <br/>
+                                    <strong>Klasse sportlich</strong> <br/>
+                                    <span style="font-style: italic;">Wir haben auch 3 Leihfahrräder.</span>
+                                    <br/>
+                                    <br/>
+                                    Alle Pkw sind Neufahrzeuge und ausgerüstet mit einer Klimaanlage.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

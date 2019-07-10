@@ -1,0 +1,218 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Höricke meine Werkstatt - Geschichte{% endblock %}
+
+{% block body %}
+    <section class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="content col-lg-12">
+                    <div class="row list-style clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="blog-desc">
+                                <span class="cat-title">Eine Erfolgs-Story</span>
+                                <h4>Unsere Geschichte</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="timeline"></div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="content col-lg-12">
+                    <div class="row list-style clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="blog-desc">
+                                <span class="cat-title">Schöne Bilder</span>
+                                <h4>Unsere Galerie</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="gallery">
+                        <div class="row">
+                            <div class="col-6 col-md-3" style="padding-bottom:10px;">
+                                <a href="{{ asset('assets/img/galerie/image1.jpg') }}">
+                                    <img src="{{ asset('assets/img/galerie/image1.jpg') }}" class="img-fluid img-thumbnail" title="Galerie Höricke" alt="Galerie"/>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-3" style="padding-bottom:10px;">
+                                <a href="{{ asset('assets/img/galerie/image2.jpg') }}">
+                                    <img src="{{ asset('assets/img/galerie/image2.jpg') }}" class="img-fluid img-thumbnail" title="Galerie Höricke" alt="Galerie"/>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-3" style="padding-bottom:10px;">
+                                <a href="{{ asset('assets/img/galerie/image3.jpg') }}">
+                                    <img src="{{ asset('assets/img/galerie/image3.jpg') }}" class="img-fluid img-thumbnail" title="Galerie Höricke" alt="Galerie"/>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-3" style="padding-bottom:10px;">
+                                <a href="{{ asset('assets/img/galerie/image4.jpg') }}">
+                                    <img src="{{ asset('assets/img/galerie/image4.jpg') }}" class="img-fluid img-thumbnail" title="Galerie Höricke" alt="Galerie"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+    </section>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function(){
+
+            var events = [
+                {
+                    date: 'Juni 1993',
+                    content: 'Gründung der KFZ Service Fa. Höricke in einer Doppelgarage mit einer Hebebühne'
+                },
+                {
+                    date: 'Januar 1995',
+                    content: 'Umzug und Eröffnung einer KFZ Werkstatt auf dem Gelände der Biomalz GmbH in einer Halle mit ca. 90 m<sup>2</sup>. Anschaffung einer zweiten Hebebühne.'
+                },
+                {
+                    date: 'Q4 - 1995',
+                    content: 'Neubau eines Büros, Aufenthaltsraum und Lager neben der Werkstatt '
+                },
+                {
+                    date: 'Q1 - 1996',
+                    content: 'Einstellung des ersten Angestellten, Kauf einer dritten Hebebühne, Reifenmontier- und Wuchtgerät sowie weiterer Maschinen '
+                },
+                {
+                    date: 'Q4 - 1996',
+                    content: 'Einstellung des zweiten Angestellten'
+                },
+                {
+                    date: 'März 1997',
+                    content: 'Einstellung eines Auszubildenden'
+                },
+                {
+                    date: 'August 1998',
+                    content: 'Erweiterung der Firma - Vertrieb von gebrauchten PKW'
+                },
+                {
+                    date: 'Februar 1998',
+                    content: 'Anschaffung eines Abschleppfahrzeugs'
+                },
+                {
+                    date: 'September 1998',
+                    content: 'Einstellung weiterer Auszubildenden'
+                },
+                {
+                    date: 'September 1999',
+                    content: 'Anschaffung weiterer moderner Technik - Einstellung einer Bürokraft'
+                },
+                {
+                    date: 'März 2000',
+                    content: 'Anschaffung des neuen Kundenersatzfahrzeugs - Smart Werbung im Regionalsender Teltow-Kanal'
+                },
+                {
+                    date: 'Mai 2001',
+                    content: 'Anschaffung Klima-Servicegerät'
+                },
+                {
+                    date: 'Q4 - 2001',
+                    content: 'Werbung im BB-Radio, Umzug in größeres modernes Gebäude, mit großen Shop und Waschanlage.'
+                },
+                {
+                    date: '2003 / 2004',
+                    content: 'Erweiterung der Mietwagen-Flotte mit Nissan Micra, Mercedes A-Klasse und Mercedes Vaneo '
+                },
+                {
+                    date: '2004',
+                    content: 'Öffnungszeiten von 7:00 bis 20:00 Uhr mit 2-Schicht-System '
+                },
+                {
+                    date: '2005',
+                    content: 'Anschaffung von neuer moderner Technik, u. a. Achsvermessung, Motordiagnose'
+                },
+                {
+                    date: '2006',
+                    content: 'Erweiterung des Teams auf 11 Mitarbeiter'
+                },
+                {
+                    date: '2006 / 2007',
+                    content: 'neuer Mietwagen-Fuhrpark'
+                },
+                {
+                    date: 'Juli 2007',
+                    content: 'Ausweitung der Werkstatt mit eigenem Karosseriebereich und drei Mitarbeitern, Smart Repair, Ausbeultechnik, Richtbank'
+                },
+                {
+                    date: '2008',
+                    content: 'Erweiterung des Teams auf 14 Mitarbeiter, sämtliche Karosseriearbeiten an ADAC Clubmobilen für 2 Stationen'
+                },
+                {
+                    date: '2009',
+                    content: 'Erweiterung Mietwagenflotte, Einbau Autogasanlagen, Schulung der Mitarbeiter '
+                },
+                {
+                    date: 'Q4 - 2010',
+                    content: 'Neue Ersatzwagenflotte'
+                },
+                {
+                    date: 'Q2 - 2011',
+                    content: 'Umzug in den neuen Werkstatt-Komplex, Oderstraße 20 in Teltow'
+                },
+                {
+                    date: '2012',
+                    content: 'neues Achsvermessgerät Hawk Eye'
+                },
+                {
+                    date: '2014',
+                    content: 'neue Prüfstraße für Bremsen, Fahrwerk, Spur Sherpa Autodiagnostik'
+                },
+                {
+                    date: '2014 / 2015',
+                    content: 'Erneuerung der Ersatzwagenflotte'
+                },
+                {
+                    date: '2015',
+                    content: 'Anschaffung einer neuen Richtbank CAR-O-LINER und Anschaffung der Mercedes- und VW-Software'
+                },
+                {
+                    date: '2015',
+                    content: 'Anschaffung eines Gerätes zur Programmierung von Sensoren für den Lufdruck (RDKS)'
+                },
+                {
+                    date: '2015 / 2016',
+                    content: 'Erweiterung des Teams auf 25 Mitarbeiter'
+                },
+                {
+                    date: '2017 / 2018',
+                    content: 'Erweiterung der Ersatzwagenflotte'
+                },
+                {
+                    date: '2017 / 2018',
+                    content: 'Anschaffung eines Matrix LED Scheinwerfer Einsteigergerätes'
+                },
+                {
+                    date: '2018',
+                    content: 'Anschaffung eines neuen Klimaanlagengerätes für R1234yf'
+                },
+                {
+                    date: '2018',
+                    content: 'Erweiterung unserer Diagnosetechnik'
+                },
+            ];
+
+            $('#timeline').roadmap(events, {
+                eventsPerSlide: 6,
+                slide: 1,
+                prevArrow: '<i class="fa fa-chevron-left"></i>',
+                nextArrow: '<i class="fa fa-chevron-right"></i>'
+            });
+        });
+
+    </script>
+{% endblock %}

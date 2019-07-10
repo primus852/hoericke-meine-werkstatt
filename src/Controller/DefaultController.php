@@ -28,11 +28,39 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("/werkstatt", name="werkstatt")
+     */
+    public function werkstatt()
+    {
+        return $this->render('default/werkstatt.html.twig', [
+
+        ]);
+    }
+
+    /**
      * @Route("/sponsoring", name="sponsoring")
      */
     public function sponsoring()
     {
         return $this->render('default/sponsoring.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/geschichte", name="geschichte")
+     */
+    public function geschichte()
+    {
+        return $this->render('default/geschichte.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/kontakt", name="kontakt")
+     */
+    public function kontakt()
+    {
+        return $this->render('default/kontakt.html.twig', [
         ]);
     }
 }
