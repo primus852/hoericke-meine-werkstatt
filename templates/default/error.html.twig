@@ -1,0 +1,42 @@
+{% extends 'baseBackend.html.twig' %}
+
+{% block body %}
+    <main id="main">
+        <div class="overlay"></div>
+        <header class="header">
+            <div class="row">
+                <div class="col-6 text-left">
+                    <h1 class="page-title text-danger" >
+                        <a class="sidebar-toggle-btn trigger-toggle-sidebar">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line line-angle1"></span>
+                            <span class="line line-angle2"></span>
+                        </a>Fehler
+                    </h1>
+                </div>
+                <div class="col-6 text-right text-danger">
+
+                </div>
+            </div>
+        </header>
+        <div id="main-nano-wrapper" class="nano">
+            <div class="nano-content" id="perfectScroll">
+                <div class="container-fluid">
+                    <div class="message-container">
+                        <div class="message-box">
+                            <div class="message">
+                                <div class="row">
+                                    <div class="col-12 text-danger">
+                                        <h4>{{ message }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

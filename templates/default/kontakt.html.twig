@@ -7,33 +7,111 @@
         <div class="container">
             <div class="row">
                 <div class="content col-lg-12">
-                    <div class="blog-box row list-style clearfix">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="blog-desc">
-                                <span class="cat-title">SUBHEADER</span>
-                                <h4>HEADER</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-box row list-style clearfix">
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <div class="blog-media">
-                                <img src="{{ asset('assets/img/inspektion.jpg') }}" alt="Höricke Werkstatt" class="img-fluid img-thumbnail">
-                            </div>
-                        </div>
+                    <div class="single-page clearfix">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="map"></div>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
 
-                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                            <div class="blog-desc">
-                                <span class="cat-title">Artikel 1 - Sub</span>
-                                <h4>Artikel 1</h4>
-                                <p>
-                                    TEXT
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <hr class="invis1">
+
+                        <div class="row contact-row">
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <div class="form-wrapper">
+                                    <h4>Kontakt zu Uns</h4>
+                                    <p class="text-danger" id="form-message"></p>
+                                    <form class="row contact-form">
+                                        <div class="form-group col-lg-6">
+                                            <input type="text" class="form-control" id="form-name" placeholder="Ihr Name">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <input type="email" class="form-control" id="form-email" placeholder="Ihre Email">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <input type="text" class="form-control" id="form-telefon" placeholder="Telefon">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <select class="form-control" id="form-anliegen">
+                                                <option value="keine Auswahl" selected="selected">-- Ihr Anliegen --</option>
+                                                <option value="Reparatur">Reparatur</option>
+                                                <option value="Motor">Motor</option>
+                                                <option value="Getriebe">Getriebe</option>
+                                                <option value="Klima">Klima</option>
+                                                <option value="Reifen">Reifen</option>
+                                                <option value="Felgen">Felgen</option>
+                                                <option value="Karosserie">Karosserie</option>
+                                                <option value="Alarmanlage">Alarmanlage</option>
+                                                <option value="Wegfahrsperre">Wegfahrsperre</option>
+                                                <option value="Bremsen">Bremsen</option>
+                                                <option value="Beleuchtung">Beleuchtung</option>
+                                                <option value="Lichtmaschine">Lichtmaschine</option>
+                                                <option value="Anlasser">Anlasser</option>
+                                                <option value="Batterie">Batterie</option>
+                                                <option value="Anderes">Anderes</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="form-nachricht" style="margin-bottom: 0.7rem !important;" placeholder="Ihre Nachricht"></textarea>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <div class="col-md-8 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            <div class="mitscom-cbr">
+                                                                <div class="mitscom-cbr-success">
+                                                                    <input type="checkbox" name="checkbox" id="checkbox3"/>
+                                                                    <label for="checkbox3">Ich möchte einen Werkstatt-Termin vereinbaren!</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 col-sm-12">
+                                                            <div class="mitscom-cbr">
+                                                                <div class="mitscom-cbr-success">
+                                                                    <input type="checkbox" name="checkbox" id="checkbox4"/>
+                                                                    <label for="checkbox4">Ich möchte ein Werkstattersatzfahrzeug!</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 col-sm-12">
+                                                            <div class="mitscom-cbr">
+                                                                <div class="mitscom-cbr-success">
+                                                                    <input type="checkbox" name="checkbox" id="checkbox5"/>
+                                                                    <label for="checkbox5">Hinweise zu <a href="{{ asset('assets/pdf/Hoericke_Datenschutz.pdf') }}">Datenverarbeitung</a> habe ich gelesen</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12 text-center">
+                                                    <div class="form-group col-lg-12">
+                                                        <a class="btn btn-primary" data-url="{{ path('ajaxSendForm') }}" href="#" id="js-send-form">Absenden</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!-- end form -->
+                            </div><!-- end col -->
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="contact-details">
+                                    <h4>&nbsp;</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><a href="mailto:info@hoerickemeinewerkstatt.de"><i class="fa fa-envelope-o"></i>info@hoerickemeinewerkstatt.de</a></li>
+                                        <li class="list-group-item"><a href="tel:+4933284799090"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a></li>
+                                        <li class="list-group-item"><a href="https://wa.me/491762324170" target="_blank"><i class="fa fa-whatsapp"></i> 0176 / 2324170</a></li>
+                                        <li class="list-group-item"><a href="https://hoerickemeinewerkstatt.de/"><i class="fa fa-link"></i> www.hoerickemeinewerkstatt.de</a></li>
+                                        <li class="list-group-item"><i class="fa fa-map-marker"></i> Oderstraße 20, 14513 Teltow</li>
+                                    </ul>
+                                </div><!-- end details -->
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end single-page -->
+                </div><!-- end content -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end section -->
+    <input type="hidden" id="js-map-icon" data-url="{{ asset('assets/img/map_marker.png') }}"/>
 {% endblock %}

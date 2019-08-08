@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145326485-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145326485-1');
+    </script>
+
     <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +25,27 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('apple-touch-icon-57x57.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('apple-touch-icon-144x144.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ asset('apple-touch-icon-60x60.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('apple-touch-icon-120x120.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset('apple-touch-icon-76x76.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset('apple-touch-icon-152x152.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('favicon-196x196.png') }}" sizes="196x196" />
+    <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{{ asset('favicon-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ asset('favicon-16x16.png') }}" sizes="16x16" />
+    <link rel="icon" type="image/png" href="{{ asset('favicon-128.png') }}" sizes="128x128" />
+    <meta name="application-name" content="Kfz Meisterbetrieb Höricke in Teltow"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="{{ asset('mstile-144x144.png') }}" />
+    <meta name="msapplication-square70x70logo" content="{{ asset('mstile-70x70.png') }}" />
+    <meta name="msapplication-square150x150logo" content="{{ asset('mstile-150x150.png') }}" />
+    <meta name="msapplication-wide310x150logo" content="{{ asset('mstile-310x150.png') }}" />
+    <meta name="msapplication-square310x310logo" content="{{ asset('mstile-310x310.png') }}" />
+
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i,600,700" rel="stylesheet">
     <link href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -25,6 +54,7 @@
     <link href="{{ asset('node_modules/simplelightbox/dist/simplelightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/jquery-roadmap/dist/jquery.roadmap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/sticky.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/mitscom.min.css') }}" rel="stylesheet">
 
     {% block stylesheets %}{% endblock %}
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
@@ -35,6 +65,7 @@
     <![endif]-->
 
 </head>
+<body>
 <div id="preloader">
     <img class="preloader" src="{{ asset('assets/img/loader.gif') }}" alt="Hoericke Loader">
 </div>
@@ -78,7 +109,7 @@
                     </ul>
                     <div class="social">
                         <a href="https://www.facebook.com/pages/H%C3%B6ricke-MEINE-Werkstatt/189769644530576?fref=ts" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="https://wa.me/491762324170" target="_blank" data-toggle="tooltip" data-placement="bottom" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+                        <a href="https://wa.me/004933284799090" target="_blank" data-toggle="tooltip" data-placement="bottom" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
                     </div>
                     <div class="menu-right">
                         <a href="tel:+4933284799090" data-toggle="tooltip" data-placement="bottom" title="Jetzt Anrufen"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a>
@@ -267,9 +298,9 @@
                         </div>
                         <div class="category-widget">
                             <ul>
-                                <li><a href="#">Online Räderwechsel</a></li>
-                                <li><a href="#">Whatsapp</a></li>
-                                <li><a href="#">Galerie</a></li>
+                                <li class=""><a href="{{ path('reifen') }}">Online Räderwechsel</a></li>
+                                <li><a href="https://wa.me/004933284799090" target="_blank">Whatsapp</a></li>
+                                <li><a href="{{ path('kontakt') }}">Kontakt</a></li>
                             </ul>
                         </div>
                     </div>
@@ -280,7 +311,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        © {{ "now"|date('Y') }} Höricke meine Werkstatt GmbH | <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">AGB</a> | Made with <i class="fa fa-heart"></i> by <a href="https://www.mitscom.de">MITSCom</a>
+                        © {{ "now"|date('Y') }} Höricke meine Werkstatt GmbH | <a href="{{ path('impressum') }}">Impressum</a> | <a href="{{ asset('assets/pdf/Hoericke_Datenschutz.pdf') }}" target="_blank">Datenschutz</a> | <a href="{{ asset('assets/pdf/AGB.pdf') }}">AGB</a> | Made with <i class="fa fa-heart"></i> by <a href="https://www.mitscom.de" target="_blank">MITSCom</a>
                     </div>
                 </div>
             </div>
@@ -293,6 +324,8 @@
 <script src="{{ asset('node_modules/jquery-sticky/jquery.sticky.js') }}"></script>
 <script src="{{ asset('node_modules/simplelightbox/dist/simple-lightbox.min.js') }}"></script>
 <script src="{{ asset('node_modules/jquery-roadmap/dist/jquery.roadmap.min.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAkADq7R0xf6ami9YirAM1N-yl7hdnYBhM "></script>
+<script src="{{ asset('assets/js/map.min.js') }}"></script>
 {% block javascripts %}{% endblock %}
 <script src="{{ asset('assets/js/app.js') }}"></script>
 </body>

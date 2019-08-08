@@ -288,7 +288,7 @@ body.creative-head .header-section {
     border: 1px solid #e2e2e2;
     font-size: 12px;
     min-height: 45px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     font-weight: lighter;
 }
 
@@ -310,7 +310,6 @@ body.creative-head .header-section {
 .form-wrapper .float-right a,
 .form-wrapper label {
     font-size: 13px;
-    text-transform: capitalize;
 }
 
 .form-wrapper textarea {
@@ -362,7 +361,7 @@ body.creative-head .header-section {
 
 .pitem .magni-desc h4 {
     color: #ffffff;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     font-size: 24px;
     padding-bottom: 5px;
     margin-bottom: 0;
@@ -1257,7 +1256,7 @@ div.sidewrapper.sidenav {
     margin-left: 3px;
     padding: 0.6rem 0.8rem;
     position: relative;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .page-item:first-child .page-link {
@@ -1409,7 +1408,7 @@ div.sidewrapper.sidenav {
     padding: 2rem 0 0;
     margin: 0;
     letter-spacing: 1px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .about-desc span {
@@ -1979,7 +1978,7 @@ hr.dashedhr {
     margin-bottom: 0;
     margin-top: 15px;
     padding-bottom: 5px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .form-control:focus {

@@ -1,0 +1,424 @@
+{% extends 'baseBackend.html.twig' %}
+
+{% block body %}
+    <main id="main">
+        <div class="overlay"></div>
+        <header class="header">
+            <div class="row">
+                <div class="col-6 text-left">
+                    <h1 class="page-title">
+                        <a class="sidebar-toggle-btn trigger-toggle-sidebar">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line line-angle1"></span>
+                            <span class="line line-angle2"></span>
+                        </a>Übersicht
+                    </h1>
+                </div>
+                <div class="col-6 text-right">
+                    Umfragen in den letzten 3 Monaten: {{ surveys|length }}
+                </div>
+            </div>
+        </header>
+        <div id="main-nano-wrapper" class="nano">
+            <div class="nano-content" id="perfectScroll">
+                <div class="container-fluid">
+                    <div class="message-container">
+                        <div class="message-box">
+                            <div class="message">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Was ist Euch besonders wichtig bei eurer Werkstatt?</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                freundliche, kompetente & ehrliche Beratung
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q1"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                Qualität der durchgeführten Reparaturen
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q2"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                Preis-/ Leistungsverhältnis
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q3"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                Erläuterung der Reparaturen & genaue Kostenabsprachen
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q4"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                der günstigste Anbieter zu sein
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q5"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Was können wir verändern und noch besser machen?</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                Status der Reparatur regelmäßig per Whatsapp übermitteln
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q6"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                Termine wie Radwechsel od. HU/AU online buchbar
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q7"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                Sofortige Überprüfung beanstandeter Mängel in Eurem Beisein
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q8"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-header text-white bg-dark rounded-0">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                Bevorzugte Öffnungszeiten
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body" style="max-height:180px;">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div id="chart-q9"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Eigene Idee(n)</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <h4>Welche Emotionen verbindet ihr mit Höricke meine Werkstatt? </h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            {% for s in surveys %}
+                                                <li>{{ s.ideas }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            {% for s in surveys %}
+                                                <li>{{ s.emotions }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div>
+    </main>
+{% endblock %}
+{% block javascripts %}
+    <script>
+
+
+        {% for i in range(1,8) %}
+            create_chart_rating('chart-q{{i}}',{{ charts['q'~i].sum }},{{ charts['q'~i].avg }});
+        {% endfor %}
+        create_chart_open('chart-q9', {{ charts.q9.categories|raw }}, {{ charts.q9.data|raw }});
+
+        function create_chart_open(identifier, categories, data){
+            Highcharts.chart(identifier, {
+                colors: ['#343a40', '#a01c1a'],
+                chart: {
+                    height: 150
+                },
+                title: {
+                    text: null
+                },
+                xAxis: [{
+                    categories: categories,
+            crosshair: false
+        }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    format: '{value}',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                },
+                title: {
+                    text: 'Anzahl',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                }
+            }, { // Secondary yAxis
+                title: {
+                    text: null,
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                labels: {
+                    enabled: false
+                },
+                opposite: true,
+                enabled: false
+            }],
+                tooltip: {
+                shared: true
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                name: 'Anzahl',
+                type: 'column',
+                yAxis: 1,
+                data: data,
+            tooltip: {
+                valueSuffix: null
+            }
+        }]
+        });
+        }
+
+        function create_chart_rating(identifier, amnt, avg) {
+            Highcharts.chart(identifier, {
+                colors: ['#343a40', '#a01c1a'],
+                chart: {
+                    height: 150
+                },
+                title: {
+                    text: null
+                },
+                xAxis: [{
+                    categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                    crosshair: false
+                }],
+                yAxis: [{ // Primary yAxis
+                    labels: {
+                        format: '{value}',
+                        style: {
+                            color: Highcharts.getOptions().colors[1]
+                        }
+                    },
+                    title: {
+                        text: 'Anzahl',
+                        style: {
+                            color: Highcharts.getOptions().colors[1]
+                        }
+                    }
+                }, { // Secondary yAxis
+                    title: {
+                        text: null,
+                        style: {
+                            color: Highcharts.getOptions().colors[0]
+                        }
+                    },
+                    labels: {
+                        enabled: false
+                    },
+                    opposite: true,
+                    enabled: false
+                }],
+                tooltip: {
+                    shared: true
+                },
+                legend: {
+                    enabled: false
+                },
+                series: [{
+                    name: 'Anzahl',
+                    type: 'column',
+                    yAxis: 1,
+                    data: amnt,
+                    tooltip: {
+                        valueSuffix: null
+                    }
+
+                }, {
+                    name: 'Durchschnitt',
+                    type: 'spline',
+                    data: avg,
+                    tooltip: {
+                        valueSuffix: null
+                    }
+                }]
+            });
+        }
+
+        var GetNav = "contentOverview";
+    </script>
+{% endblock javascripts %}

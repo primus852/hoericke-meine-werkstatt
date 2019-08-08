@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>KFZ::Höricke Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('apple-touch-icon-57x57.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('apple-touch-icon-144x144.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ asset('apple-touch-icon-60x60.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('apple-touch-icon-120x120.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset('apple-touch-icon-76x76.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset('apple-touch-icon-152x152.png') }}"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-196x196.png') }}" sizes="196x196"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-32x32.png') }}" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-16x16.png') }}" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-128.png') }}" sizes="128x128"/>
+    <meta name="application-name" content="Kfz Meisterbetrieb Höricke in Teltow"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="msapplication-TileImage" content="{{ asset('mstile-144x144.png') }}"/>
+    <meta name="msapplication-square70x70logo" content="{{ asset('mstile-70x70.png') }}"/>
+    <meta name="msapplication-square150x150logo" content="{{ asset('mstile-150x150.png') }}"/>
+    <meta name="msapplication-wide310x150logo" content="{{ asset('mstile-310x150.png') }}"/>
+    <meta name="msapplication-square310x310logo" content="{{ asset('mstile-310x310.png') }}"/>
+
+    <!-- LOAD CSS FILES -->
+    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500"/>
+    <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/animate.css/animate.min.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/perfect-scrollbar/css/perfect-scrollbar.css') }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/noty/lib/noty.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/noty/lib/themes/mint.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/buttons.min.css') }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/backend.min.css') }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/reset.min.css') }}"/>
+    {% block stylesheets %}{% endblock %}
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/overrides.min.css') }}"/>
+</head>
+<body>
+
+<aside id="sidebar" class="nano">
+    <div class="nano-content" id="pScrollerMenu">
+        <div class="logo-container"><span class="logo fa fa-wrench"></span>KFZ::H</div>
+        <div class="menu-segment">
+            <div class="row">
+                <div class="col-12">
+                    <div class="userWelcome">Benutzer: {{ app.user.username }}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="{{ path('logout') }}" style="color:white;" class="btn btn-success btn-sm rounded-0">Abmelden <i class="fa fa-lock"></i> </a>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="separator"></div>
+        <menu class="menu-segment">
+            <ul>
+                <li id="contentOverview">
+                    <a href="{{ path('backendDashboard') }}" class="mLink">
+                        <i class="fa fa-list"></i> Übersicht
+                    </a>
+                </li>
+                <li id="contentVoucher">
+                    <a href="{{ path('backendVoucher') }}" class="mLink">
+                        <i class="fa fa-user"></i> Gutscheine
+                    </a>
+                </li>
+            </ul>
+        </menu>
+        <div class="separator"></div>
+        <div class="bottom-padding"></div>
+    </div>
+</aside>
+<!-- Slide in Window -->
+{% block body %}{% endblock %}
+
+
+<script type="text/javascript" src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/tether/dist/js/tether.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/noty/lib/noty.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/highcharts/highcharts.src.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+{% block javascripts %}{% endblock %}
+<script src="{{ asset('assets/js/backend.js') }}"></script>
+</body>
+</html>
