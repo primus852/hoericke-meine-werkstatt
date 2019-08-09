@@ -133,7 +133,7 @@ class MakeBackupCommand extends Command
     {
 
         $message = (new Swift_Message('Backup - Höricke - Hoericke'))
-            ->setFrom('backups@mitscom.de')
+            ->setFrom(getenv('MAILER_USERNAME'))
             ->setCharset('UTF-8')
             ->setTo('backups@mitscom.de')
             ->setContentType('text/html')
