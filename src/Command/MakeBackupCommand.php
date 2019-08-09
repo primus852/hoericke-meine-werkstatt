@@ -104,7 +104,7 @@ class MakeBackupCommand extends Command
 
                 } else {
                     $this->sendMail("Backupüberprüfung fehlgeschlagen. Fehler: FTP_CHECK_LOGIN_FAIL, Project: " . $this->project . ". Das Backup konnte nicht auf erfolgreichen Upload überprüft werden");
-                    $io->error('Could login to FTP: ' . getenv('FTP_USER'));
+                    $io->error('Could login to FTP: ' . getenv('BACKUP_FTP_USER'));
                 }
 
                 ftp_close($ftp);
@@ -132,7 +132,7 @@ class MakeBackupCommand extends Command
     private function sendMail(string $sendText)
     {
 
-        $message = (new Swift_Message('Backup - Intern - MITSWiki'))
+        $message = (new Swift_Message('Backup - Höricke - Hoericke'))
             ->setFrom('backups@mitscom.de')
             ->setCharset('UTF-8')
             ->setTo('backups@mitscom.de')
