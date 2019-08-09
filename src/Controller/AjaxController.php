@@ -124,7 +124,8 @@ class AjaxController extends AbstractController
                         'wagen' => $wagen,
                         'termin' => $termin,
                         'datenschutz' => $datenschutz,
-                        'message' => $nachricht
+                        'message' => $nachricht,
+                        'env' => getenv('MAILER_USERNAME'),
                     )
                 ),
                 'text/html'
