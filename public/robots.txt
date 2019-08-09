@@ -1,0 +1,8 @@
+# www.robotstxt.org/
+# www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
+
+Sitemap: https://hoerickemeinewerkstatt.de/sitemap.xml
+User-agent: *
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /_ajax/
