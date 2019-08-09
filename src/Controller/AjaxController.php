@@ -113,7 +113,7 @@ class AjaxController extends AbstractController
 
         $message = (new Swift_Message('Neue Kontaktaufnahme'))
             ->setFrom(getenv('MAILER_USERNAME'))
-            ->setTo(getenv('MAILER_USERNAME'))
+            ->setTo(getenv('MAILER_USERNAME2'))
             ->setBody(
                 $this->renderView(
                     'email/message.html.twig', array(
