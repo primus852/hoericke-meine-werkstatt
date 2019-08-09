@@ -1,0 +1,21 @@
+# See full config at https://github.com/backup-manager/symfony
+bm_backup_manager:
+  database:
+    development:
+      dsn: '%env(resolve:DATABASE_URL)%'
+    production:
+      dsn: '%env(resolve:DATABASE_URL)%'
+  storage:
+    local:
+      type: Local
+      root: '%kernel.cache_dir%/db'
+    ftp:
+      type: Ftp
+      host: '%env(resolve:BACKUP_FTP_HOST)%'
+      username: '%env(resolve:BACKUP_FTP_USER)%'
+      password: '%env(resolve:BACKUP_FTP_PASS)%'
+      root: '/%env(resolve:BACKUP_FTP_ROOT)%/%env(resolve:BACKUP_FTP_FOLDER)%'
+      port: '%env(resolve:BACKUP_FTP_PORT)%'
+      passive: false
+      ssl: '%env(resolve:BACKUP_FTP_SSL)%'
+      timeout: 30

@@ -6,6 +6,8 @@
     "ext-ctype": "*",
     "ext-dom": "*",
     "ext-iconv": "*",
+    "ext-json": "*",
+    "backup-manager/symfony": "^2.2",
     "guzzlehttp/guzzle": "^6.3",
     "phpoffice/phpspreadsheet": "^1.5",
     "phpseclib/phpseclib": "^2.0",
@@ -30,7 +32,7 @@
     "symfony/web-link": "*",
     "symfony/yaml": "*",
     "twig/extensions": "^1.5",
-    "ext-json": "*"
+    "ext-ftp": "*"
   },
   "require-dev": {
     "doctrine/doctrine-fixtures-bundle": "^3.0",

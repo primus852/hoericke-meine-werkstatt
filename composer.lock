@@ -4,8 +4,152 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43a78012d4e94fb4cf203046821ef717",
+    "content-hash": "015bbd127385f4f0f0b75430a12be6ba",
     "packages": [
+        {
+            "name": "backup-manager/backup-manager",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/backup-manager/backup-manager.git",
+                "reference": "2176c335e0a3a3f65da4f3966a5336856206a86b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/backup-manager/backup-manager/zipball/2176c335e0a3a3f65da4f3966a5336856206a86b",
+                "reference": "2176c335e0a3a3f65da4f3966a5336856206a86b",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "^1.0",
+                "php": "^5.5.9 || ^7.0",
+                "symfony/process": "^2.1 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "~3.0",
+                "dropbox/dropbox-sdk": "~1.1",
+                "league/flysystem-aws-s3-v3": "~1.0",
+                "league/flysystem-dropbox": "~1.0",
+                "league/flysystem-rackspace": "~1.0",
+                "league/flysystem-sftp": "~1.0",
+                "mhetreramesh/flysystem-backblaze": "~1.0",
+                "mockery/mockery": "~0.9",
+                "phpspec/phpspec": "~2.1",
+                "satooshi/php-coveralls": "~0.6",
+                "srmklive/flysystem-dropbox-v2": "~1.0",
+                "superbalist/flysystem-google-storage": "^7.0"
+            },
+            "suggest": {
+                "league/flysystem-aws-s3-v3": "AWS S3 adapter support.",
+                "league/flysystem-rackspace": "Rackspace adapter support.",
+                "league/flysystem-sftp": "SFTP adapter support.",
+                "mhetreramesh/flysystem-backblaze": "B2 adapter support.",
+                "srmklive/flysystem-dropbox-v2": "Dropbox API v2 adapter support.",
+                "superbalist/flysystem-google-storage": "Google Cloud Storage adapter support."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BackupManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com",
+                    "homepage": "http://heybigname.com/"
+                },
+                {
+                    "name": "Mitchell van Wijngaarden",
+                    "email": "mitchell@kooding.nl",
+                    "homepage": "http://heybigname.com/"
+                }
+            ],
+            "description": "A framework agnostic database backup manager with user-definable procedures and support for S3, Dropbox, FTP, SFTP, and more with drivers for popular frameworks.",
+            "time": "2018-10-16T19:36:05+00:00"
+        },
+        {
+            "name": "backup-manager/symfony",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/backup-manager/symfony.git",
+                "reference": "3b1e770857daf26639c9d25ad1d30a3abfb08353"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/backup-manager/symfony/zipball/3b1e770857daf26639c9d25ad1d30a3abfb08353",
+                "reference": "3b1e770857daf26639c9d25ad1d30a3abfb08353",
+                "shasum": ""
+            },
+            "require": {
+                "backup-manager/backup-manager": "^1.3",
+                "nyholm/dsn": "^0.1",
+                "php": "^5.5 || ^7.0",
+                "symfony/config": "^2.7 || ^3.1 || ^4.0",
+                "symfony/console": "^2.7 || ^3.1 || ^4.0",
+                "symfony/dependency-injection": "^2.7 || ^3.1 || ^4.0",
+                "symfony/filesystem": "^2.7 || ^3.1 || ^4.0",
+                "symfony/framework-bundle": "^2.7 || ^3.0 || ^4.0",
+                "symfony/http-kernel": "^2.7 || ^3.0 || ^4.0",
+                "symfony/yaml": "^2.7 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "matthiasnoback/symfony-config-test": "^2.2 || ^3.1",
+                "matthiasnoback/symfony-dependency-injection-test": "^1.2 || ^2.3",
+                "nyholm/symfony-bundle-test": "^1.3.1",
+                "symfony/phpunit-bridge": "^3.4 || ^4.0"
+            },
+            "suggest": {
+                "league/flysystem-aws-s3-v3": "To use AWS S3, version 3",
+                "league/flysystem-rackspace": "To use Rackspace",
+                "league/flysystem-sftp": "To use sftp",
+                "mhetreramesh/flysystem-backblaze": "To use B2",
+                "srmklive/flysystem-dropbox-v2": "To use Dropbox"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BM\\BackupManagerBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luiz Henrique Gomes Palácio",
+                    "email": "lhpalacio@outlook.com"
+                }
+            ],
+            "description": "A simple database backup manager for Symfony2 with support for S3, Rackspace, Dropbox, FTP, SFTP.",
+            "keywords": [
+                "backup",
+                "database",
+                "dropbox",
+                "ftp",
+                "rackspace",
+                "s3",
+                "sftp",
+                "symfony"
+            ],
+            "time": "2018-12-24T08:55:53+00:00"
+        },
         {
             "name": "defuse/php-encryption",
             "version": "v2.2.1",
@@ -1620,6 +1764,90 @@
             "time": "2014-01-12T16:20:24+00:00"
         },
         {
+            "name": "league/flysystem",
+            "version": "1.0.53",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem.git",
+                "reference": "08e12b7628f035600634a5e76d95b5eb66cea674"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/08e12b7628f035600634a5e76d95b5eb66cea674",
+                "reference": "08e12b7628f035600634a5e76d95b5eb66cea674",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": ">=5.5.9"
+            },
+            "conflict": {
+                "league/flysystem-sftp": "<1.0.6"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^3.4",
+                "phpunit/phpunit": "^5.7.10"
+            },
+            "suggest": {
+                "ext-fileinfo": "Required for MimeType",
+                "ext-ftp": "Allows you to use FTP server storage",
+                "ext-openssl": "Allows you to use FTPS server storage",
+                "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
+                "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
+                "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
+                "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+                "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+                "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+                "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
+                "league/flysystem-webdav": "Allows you to use WebDAV storage",
+                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
+                "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
+                "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Filesystem abstraction: Many filesystems, one API.",
+            "keywords": [
+                "Cloud Files",
+                "WebDAV",
+                "abstraction",
+                "aws",
+                "cloud",
+                "copy.com",
+                "dropbox",
+                "file systems",
+                "files",
+                "filesystem",
+                "filesystems",
+                "ftp",
+                "rackspace",
+                "remote",
+                "s3",
+                "sftp",
+                "storage"
+            ],
+            "time": "2019-06-18T20:09:29+00:00"
+        },
+        {
             "name": "markbaker/complex",
             "version": "1.4.7",
             "source": {
@@ -1861,6 +2089,57 @@
                 "psr-3"
             ],
             "time": "2018-11-05T09:00:11+00:00"
+        },
+        {
+            "name": "nyholm/dsn",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nyholm/dsn.git",
+                "reference": "49ad650b4df54e0da8c5eeb9f69b74f1510f3b9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nyholm/dsn/zipball/49ad650b4df54e0da8c5eeb9f69b74f1510f3b9e",
+                "reference": "49ad650b4df54e0da8c5eeb9f69b74f1510f3b9e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36 || ^6.5.7 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nyholm\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "Parse your DSN",
+            "homepage": "http://tnyholm.se",
+            "keywords": [
+                "database",
+                "dsn",
+                "dsn parser",
+                "parser"
+            ],
+            "time": "2018-12-11T21:51:27+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -7500,7 +7779,8 @@
         "php": "^7.1.3",
         "ext-ctype": "*",
         "ext-dom": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-json": "*"
     },
     "platform-dev": []
 }
