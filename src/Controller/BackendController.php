@@ -40,7 +40,7 @@ class BackendController extends AbstractController
     public function dashboard(ObjectManager $em)
     {
 
-        $sm = new SurveyManager($em);
+        $sm = new SurveyManager($em, 3);
 
         try{
             $s = $sm->list();
