@@ -14,6 +14,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 class MakeBackupCommand extends Command
 {
@@ -24,16 +27,40 @@ class MakeBackupCommand extends Command
     private $project;
 
     /**
+     * See services.yaml
+     */
+    private $bFolder;
+    private $bHost;
+    private $bPort;
+    private $bUser;
+    private $bPass;
+    private $bRoot;
+
+
+    /**
      * MakeBackupCommand constructor.
      * @param Manager $bManager
      * @param Environment $twig
      * @param Swift_Mailer $mailer
+     * @param string $bFolder
+     * @param string $bHost
+     * @param string $bPort
+     * @param string $bUser
+     * @param string $bPass
+     * @param string $bRoot
      */
-    public function __construct(Manager $bManager, Environment $twig, Swift_Mailer $mailer)
+    public function __construct(Manager $bManager, Environment $twig, Swift_Mailer $mailer, string $bFolder, string $bHost, string $bPort, string $bUser, string $bPass, string $bRoot)
     {
         $this->bManager = $bManager;
         $this->mailer = $mailer;
         $this->twig = $twig;
+        
+        $this->bFolder = $bFolder;
+        $this->bHost = $bHost;
+        $this->bPort = $bPort;
+        $this->bUser = $bUser;
+        $this->bPass = $bPass;
+        $this->bRoot = $bRoot;
 
         parent::__construct();
     }
@@ -56,11 +83,10 @@ class MakeBackupCommand extends Command
         $start = new DateTime();
 
         $debug ? $io->text('<fg=green>Starting upload</>') : null;
-        dump(getenv('MAILER_USERNAME'));die;
 
         try {
             $now = new DateTime();
-            $filename = getenv('BACKUP_FTP_FOLDER') . '_' . $now->format('Y-m-d_H-i-s');
+            $filename = $this->bFolder . '_' . $now->format('Y-m-d_H-i-s');
             $this->bManager->makeBackup()->run('production', [new Destination('ftp', $filename)], 'gzip');
 
             $end = new DateTime();
@@ -69,17 +95,17 @@ class MakeBackupCommand extends Command
             /**
              * Check the Filesize of the Output file
              */
-            $ftp = ftp_connect(getenv('BACKUP_FTP_HOST'), getenv('BACKUP_FTP_PORT'));
+            $ftp = ftp_connect($this->bHost, $this->bPort);
             if ($ftp) {
 
-                $r = ftp_login($ftp, getenv('BACKUP_FTP_USER'), getenv('BACKUP_FTP_PASS'));
+                $r = ftp_login($ftp, $this->bUser, $this->bPass);
                 if ($r) {
 
                     /**
                      * Change the directory
                      */
-                    if(ftp_chdir($ftp, getenv('BACKUP_FTP_ROOT'))){
-                        if(ftp_chdir($ftp, getenv('BACKUP_FTP_FOLDER'))){
+                    if(ftp_chdir($ftp, $this->bRoot)){
+                        if(ftp_chdir($ftp, $this->bFolder)){
 
                             /**
                              * Get Size of Backup
@@ -88,31 +114,31 @@ class MakeBackupCommand extends Command
 
                             if ($size <= 0) {
                                 $this->sendMail("Backup fehlgeschlagen. Fehler: FTP_CHECK_FILESIZE, Project: " . $this->project . ". Das Backup ist nicht vorhanden oder leer.");
-                                $io->error('Invalid Filesize of file \'' . getenv('BACKUP_FTP_ROOT') . '/' . getenv('BACKUP_FTP_FOLDER') . '/' . $filename . '.gz' . '\': ' . $size);
+                                $io->error('Invalid Filesize of file \'' . $this->bRoot . '/' . $this->bFolder . '/' . $filename . '.gz' . '\': ' . $size);
                             }else{
 
                                 $this->sendMail('Backup war erfolgreich.|Start:' . $start->format('Y-m-d H:i:s') . '|End:' . $end->format('Y-m-d H:i:s') . '|Duration:' . $intervalCode->format('%i minutes and %s seconds') . '|Project:' . $this->project . '|MITSComInternalBackupScript');
 
                             }
                         }else{
-                            $this->sendMail("Backup fehlgeschlagen. Fehler: FTP_CHECK_CHDIR, Project: " . $this->project . ". Konnte nicht in Ordner ".getenv('BACKUP_FTP_FOLDER')." wechseln.");
-                            $io->error('Could not change directory: '.getenv('BACKUP_FTP_FOLDER'));
+                            $this->sendMail("Backup fehlgeschlagen. Fehler: FTP_CHECK_CHDIR, Project: " . $this->project . ". Konnte nicht in Ordner ".$this->bFolder." wechseln.");
+                            $io->error('Could not change directory: '.$this->bFolder);
                         }
                     }else{
-                        $this->sendMail("Backup fehlgeschlagen. Fehler: FTP_CHECK_CHDIR, Project: " . $this->project . ". Konnte nicht in Ordner ".getenv('BACKUP_FTP_ROOT')." wechseln.");
-                        $io->error('Could not change directory: '.getenv('BACKUP_FTP_ROOT'));
+                        $this->sendMail("Backup fehlgeschlagen. Fehler: FTP_CHECK_CHDIR, Project: " . $this->project . ". Konnte nicht in Ordner ".$this->bRoot." wechseln.");
+                        $io->error('Could not change directory: '.$this->bRoot);
                     }
 
                 } else {
                     $this->sendMail("Backupüberprüfung fehlgeschlagen. Fehler: FTP_CHECK_LOGIN_FAIL, Project: " . $this->project . ". Das Backup konnte nicht auf erfolgreichen Upload überprüft werden");
-                    $io->error('Could login to FTP: ' . getenv('BACKUP_FTP_USER'));
+                    $io->error('Could login to FTP: ' . $this->bUser);
                 }
 
                 ftp_close($ftp);
 
             } else {
                 $this->sendMail("Backupüberprüfung fehlgeschlagen. Fehler: FTP_CHECK_CONNECT_FAIL, Project: " . $this->project . ". Das Backup konnte nicht auf erfolgreichen Upload überprüft werden");
-                $io->error('Could not connect to FTP: ' . getenv('BACKUP_FTP_HOST'));
+                $io->error('Could not connect to FTP: ' . $this->bHost);
             }
 
             # Restore
@@ -129,12 +155,15 @@ class MakeBackupCommand extends Command
 
     /**
      * @param string $sendText
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     private function sendMail(string $sendText)
     {
 
         $message = (new Swift_Message('Backup - Höricke - Hoericke'))
-            ->setFrom(getenv('MAILER_USERNAME'))
+            ->setFrom('info@hoerickemeinewerkstatt.de')
             ->setCharset('UTF-8')
             ->setTo('backups@mitscom.de')
             ->setContentType('text/html')

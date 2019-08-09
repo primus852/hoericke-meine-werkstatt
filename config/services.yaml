@@ -11,6 +11,13 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $bFolder: '%env(BACKUP_FTP_FOLDER)%'
+            $bHost: '%env(BACKUP_FTP_HOST)%'
+            $bPort: '%env(BACKUP_FTP_PORT)%'
+            $bUser: '%env(BACKUP_FTP_USER)%'
+            $bPass: '%env(BACKUP_FTP_PASS)%'
+            $bRoot: '%env(BACKUP_FTP_ROOT)%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
