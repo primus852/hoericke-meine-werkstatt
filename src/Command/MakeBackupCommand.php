@@ -56,6 +56,7 @@ class MakeBackupCommand extends Command
         $start = new DateTime();
 
         $debug ? $io->text('<fg=green>Starting upload</>') : null;
+        dump(getenv('MAILER_USERNAME'));die;
 
         try {
             $now = new DateTime();
