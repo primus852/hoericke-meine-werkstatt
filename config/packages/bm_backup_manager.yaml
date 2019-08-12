@@ -8,7 +8,7 @@ bm_backup_manager:
   storage:
     local:
       type: Local
-      root: '%kernel.cache_dir%/db'
+      root: '%kernel.project_dir%'
     ftp:
       type: Ftp
       host: 90.187.101.17
