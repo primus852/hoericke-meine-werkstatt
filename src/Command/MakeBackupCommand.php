@@ -35,7 +35,7 @@ class MakeBackupCommand extends Command
     private $bUser;
     private $bPass;
     private $bRoot;
-
+    private $bSsl;
 
     /**
      * MakeBackupCommand constructor.
@@ -48,8 +48,9 @@ class MakeBackupCommand extends Command
      * @param string $bUser
      * @param string $bPass
      * @param string $bRoot
+     * @param string $bSsl
      */
-    public function __construct(Manager $bManager, Environment $twig, Swift_Mailer $mailer, string $bFolder, string $bHost, string $bPort, string $bUser, string $bPass, string $bRoot)
+    public function __construct(Manager $bManager, Environment $twig, Swift_Mailer $mailer, string $bFolder, string $bHost, string $bPort, string $bUser, string $bPass, string $bRoot, string $bSsl)
     {
         $this->bManager = $bManager;
         $this->mailer = $mailer;
@@ -61,6 +62,7 @@ class MakeBackupCommand extends Command
         $this->bUser = $bUser;
         $this->bPass = $bPass;
         $this->bRoot = $bRoot;
+        $this->bSsl = $bSsl === 'true' ? true : false;
 
         parent::__construct();
     }
@@ -95,7 +97,7 @@ class MakeBackupCommand extends Command
             /**
              * Check the Filesize of the Output file
              */
-            $ftp = ftp_connect($this->bHost, $this->bPort);
+            $ftp = ftp_ssl_connect($this->bHost);
             if ($ftp) {
 
                 $r = ftp_login($ftp, $this->bUser, $this->bPass);

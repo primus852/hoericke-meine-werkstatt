@@ -18,6 +18,7 @@ services:
             $bUser: '%env(BACKUP_FTP_USER)%'
             $bPass: '%env(BACKUP_FTP_PASS)%'
             $bRoot: '%env(BACKUP_FTP_ROOT)%'
+            $bSsl: '%env(BACKUP_FTP_SSL)%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

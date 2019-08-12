@@ -11,11 +11,11 @@ bm_backup_manager:
       root: '%kernel.cache_dir%/db'
     ftp:
       type: Ftp
-      host: '%env(resolve:BACKUP_FTP_HOST)%'
-      username: '%env(resolve:BACKUP_FTP_USER)%'
-      password: '%env(resolve:BACKUP_FTP_PASS)%'
-      root: '/%env(resolve:BACKUP_FTP_ROOT)%/%env(resolve:BACKUP_FTP_FOLDER)%'
-      port: '%env(resolve:BACKUP_FTP_PORT)%'
+      host: 192.168.10.10
+      username: mitscom_int_ftp
+      password: ABcd1234
+      root: '/FTP-Intern/hoericke'
+      port: 21
       passive: false
-      ssl: '%env(resolve:BACKUP_FTP_SSL)%'
+      ssl: false
       timeout: 30
