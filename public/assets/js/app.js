@@ -9,16 +9,18 @@
             e.preventDefault();
             $('body').removeClass('nav-expanded');
         });
-        $(".header").sticky({
-            topSpacing: 0,
-            responsiveWidth: true,
-            zIndex: 15
-        });
+
 
         var $gallery = $('.gallery a');
         if ($gallery.length) {
             $gallery.simpleLightbox();
         }
+
+        $(".toggle-mnu").click(function() {
+            $(this).toggleClass("on");
+            $("#matildamenu").slideToggle();
+            return false;
+        });
     });
 
     $(document).on('click','#js-send-form',function(e){

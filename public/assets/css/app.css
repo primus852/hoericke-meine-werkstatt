@@ -826,7 +826,7 @@ div.sidewrapper.sidenav {
 .navbar-toggler {
     align-self: flex-start;
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 1px solid transparent;
+    border: 1px solid white;
     border-radius: 0.25rem;
     font-size: 11px;
     line-height: 1;

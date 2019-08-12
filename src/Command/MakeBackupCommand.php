@@ -145,7 +145,7 @@ class MakeBackupCommand extends Command
             # $this->bManager->makeRestore()->run('ftp', 'mitswiki_' . $now->format('Y-m-d_H-i-s'), 'production', 'gzip');
 
         } catch (Exception $e) {
-            $this->sendMail("Backup fehlgeschlagen. Fehler: " . $e->getMessage() . ", Project: " . $this->project);
+            //$this->sendMail("Backup fehlgeschlagen. Fehler: " . $e->getMessage() . ", Project: " . $this->project);
             $io->error('Exception: ' . $e->getMessage());
         }
 
