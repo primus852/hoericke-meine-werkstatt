@@ -97,7 +97,7 @@ class MakeBackupCommand extends Command
             /**
              * Check the Filesize of the Output file
              */
-            $ftp = ftp_ssl_connect($this->bHost);
+            $ftp = ftp_connect($this->bHost, $this->bPort);
             if ($ftp) {
 
                 $r = ftp_login($ftp, $this->bUser, $this->bPass);

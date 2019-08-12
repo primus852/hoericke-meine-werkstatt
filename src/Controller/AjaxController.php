@@ -111,9 +111,9 @@ class AjaxController extends AbstractController
             return ShortResponse::error('Bitte lesen Sie die Hinweise zur Datenverarbeitung');
         }
 
-        $message = (new Swift_Message('Neue Kontaktaufnahme TEST'))
+        $message = (new Swift_Message('Neue Kontaktaufnahme'))
             ->setFrom(getenv('MAILER_USERNAME'))
-            ->setTo('tw@mitscom.de')
+            ->setTo(getenv('MAILER_USERNAME'))
             ->setBody(
                 $this->renderView(
                     'email/message.html.twig', array(
