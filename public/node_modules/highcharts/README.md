@@ -21,6 +21,16 @@ See [npm documentation](https://docs.npmjs.com/) on how to get started with npm.
 npm install --save highcharts
 ```
 
+#### Install nightly build
+See [highcharts documentation](https://www.highcharts.com/docs/getting-started/install-from-npm) for installing the nightly build.
+
+Note that we do not recommend the use of the nightly build in production environments as it **may contain bugs and is not considered stable.**
+
+```
+npm install --save highcharts/highcharts-dist#nightly
+```
+
+
 ### Install from Bower
 See [Bower documentation](https://bower.io/) on how to get started with Bower.
 ```
