@@ -12,11 +12,11 @@
 
 .pinned-banner {
     position: fixed;
-    height: 85px;
+    height: 109px;
     top: 5px;
     width:109px;
     right:5px;
-    background: transparent url("../img/partner/WDV.png");
+    background: transparent url("../img/partner/WDV_2021.png");
     margin: 0;
     z-index: 25;
 }

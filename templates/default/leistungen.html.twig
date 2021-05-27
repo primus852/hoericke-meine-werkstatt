@@ -31,6 +31,8 @@
                                     <div class="col-10 col-md-3 border bg-light" style="min-height: 54px;padding:15px;"><span class="leistung-box">Fahrzeugelektronik</span></div>
                                     <div class="col-10 col-md-6 border bg-light" style="min-height: 54px;padding:15px;"><span class="leistung-box">Diagnose</span></div>
                                     <div class="col-10 col-md-6 border bg-light" style="min-height: 54px;padding:15px;"><span class="leistung-box">Programmierung Reifenluftdrucksensoren (RDKS) </span></div>
+				    <div class="col-10 col-md-12 border bg-light" style="min-height: 54px;padding:15px;"><span class="leistung-box">Wartung und Reparatur von Elektrofahrzeugen</span></div>
+
                                 </div>
                             </div><!-- end desc -->
                         </div><!-- end right-side -->
@@ -53,9 +55,9 @@
                                     durchgeführt, dies können sie anhand des Wartungsprotokolls nachvollziehen.
                                     <br/>
                                     <br/>
-                                    Nach der Inspizierung ihres Fahrzeugs und dem eventuell erforderlichen Ölwechsel, werden sie vom Werkstattmeister Rico Schneider oder den Schichtleitern Oliver Marx und Michael Grabow umfassend über weitere
-                                    Reparaturmaßnahmen und deren Kosten informiert, sodass sie zusammen mit den Fachkollegen über akute Mängel, welche sofort repariert werden müssen und Hinweisen für spätere Reparaturen immer auf ihre persönlichen
-                                    Bedürfnisse zugeschnitten, entscheiden können.
+                                    Nach der Inspizierung ihres Fahrzeugs und dem eventuell erforderlichen Ölwechsel, werden sie von den Werkstattmeistern Rico Schneider und Florian Rennefeld, dem Werkstattleiter Michael Grabow oder dem Schichtleiter 
+									Dennis Richter umfassend über weitere Reparaturmaßnahmen und deren Kosten informiert, sodass sie zusammen mit den Fachkollegen über akute Mängel, welche sofort repariert werden müssen und Hinweisen für spätere
+									Reparaturen immer auf ihre persönlichen Bedürfnisse zugeschnitten, entscheiden können.
                                     <br/>
                                     <br/>
                                     Transparenz ist uns sehr wichtig, sie sollen nur das bezahlen, worüber
@@ -101,7 +103,7 @@
                         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                             <div class="blog-desc">
                                 <span class="cat-title">In Kooperation mit dem TÜV Rheinland</span>
-                                <h4>HU und AU für 115,- Euro</h4>
+                                <h4>HU und AU für 127,- Euro</h4>
                                 <p>
                                     Selbstverständlich können Sie bei uns Ihre Hauptuntersuchung (HU) und/oder Abgasuntersuchung (AU) durchführen lassen. Dies geschieht bei uns in Kooperation mit dem <a
                                             href="http://www.tuv.com/de/deutschland/home.jsp">TÜV Rheinland</a>, einem unserer vertrauensvoller Partner.
@@ -131,24 +133,53 @@
                     <div class="blog-box row list-style clearfix">
                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             <div class="blog-media">
-                                <img src="{{ asset('assets/img/partner/kfz_helpline-klein.jpg') }}" alt="Höricke Werkstatt" class="img-fluid img-thumbnail">
+                                <img id="myImg" src="/assets/img/helpline.jpg" alt="Höricke Werkstatt" class="img-fluid img-thumbnail">
+
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+				  <span class="close">x</span>
+				  <img class="modal-content" id="img01">
+				  <div id="caption"></div>
+				</div>
+
+                             <script>
+				// Get the modal
+				var modal = document.getElementById("myModal");
+
+				// Get the image and insert it inside the modal - use its "alt" text as a caption
+				var img = document.getElementById("myImg");
+				var modalImg = document.getElementById("img01");
+				var captionText = document.getElementById("caption");
+				img.onclick = function(){
+ 			       	  modal.style.display = "block";
+				  modalImg.src = this.src;
+  				captionText.innerHTML = this.alt;
+				}
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() { 
+				  modal.style.display = "none";
+				}
+                            </script>
                             </div>
                         </div>
-
-                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+			<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                             <div class="blog-desc">
-                                <span class="cat-title">Das Internetportal rund um Ihr Fahrzeug!</span>
+                                <span class="cat-title">DAS INTERNATIONAL RUND UM IHR FAHRZEUG!</span>
                                 <h4><a href="https://www.kfz-helpline.de/">kfz-helpline.de</a></h4>
                                 <p>
-                                    Sie benötigen eine Inspektion oder eine Reparatur, brauchen einen
-                                    kompetenten Unfallspezialisten oder einen Fachmann für Ihre kommende Hauptuntersuchung*? Sie interessieren sich für eine Umrüstung auf Autogas, suchen Autopflege-Produkte oder Kfz-Teile?
+                                        Sie benötigen eine Inspektion oder eine Reparatur, brauchen einen kompetenten Unfallspezialisten oder einen Fachmann für Ihre kommende Hauptuntersuchung*? Sie interessieren sich für eine Umrüstung auf Autogas, suchen Autopflege-Produkte oder Kfz-Teile?
                                 </p>
-                                <p>
-                                    Dann sprechen Sie uns an – wir helfen Ihnen gern weiter.
-                                </p>
+				<p>
+					Dann sprechen Sie uns an - wir helfen Ihnen gern weiter.
+				</p>
 
                             </div>
                         </div>
+
                     </div>
                     <div class="blog-box row list-style clearfix">
                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
