@@ -129,3 +129,8 @@ fabric.properties
 .idea/httpRequests
 /.env
 /project.iml
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
