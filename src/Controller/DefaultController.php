@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\SeasonSettings;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
@@ -11,10 +14,22 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="default")
      */
-    public function index()
+    public function index(EntityManagerInterface $em)
     {
+
+        $settings = $em->getRepository(SeasonSettings::class)->find(1);
+        if($settings === null){
+            $reifenEnabled = true;
+            $selectedSeason = 'her';
+        }else{
+            $reifenEnabled = $settings->getRadwechselEnabled();
+            $selectedSeason = $settings->getCurrentBanner();
+        }
+
+
+
         return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
+            'reifenEnabled' => $reifenEnabled,
         ]);
     }
 
@@ -77,8 +92,19 @@ class DefaultController extends AbstractController
     /**
      * @Route("/reifenwechsel", name="reifen")
      */
-    public function reifen()
+    public function reifen(EntityManagerInterface $em)
     {
+        $settings = $em->getRepository(SeasonSettings::class)->find(1);
+        if($settings === null){
+            $reifenEnabled = true;
+        }else{
+            $reifenEnabled = $settings->getRadwechselEnabled();
+        }
+
+        if(!$reifenEnabled){
+            throw new NotFoundHttpException();
+        }
+
         return $this->render('default/reifen.html.twig', [
         ]);
     }

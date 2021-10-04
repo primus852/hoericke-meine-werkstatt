@@ -47,6 +47,71 @@ function initDatatables(selector, sortOrder) {
     }
 }
 
+$('.js-change-banner').on('click', function(e) {
+    e.preventDefault();
+
+    var $btn = $(this);
+    var $value = $('#selectBanner');
+    if ($btn.attr('disabled')) {
+        return;
+    }
+    var $htmlBtn = $btn.html();
+    $btn.attr('disabled', 'disabled').html('<i class="fa fa-spin fa-spinner"></i> Speichere...');
+
+    $.post($btn.attr('data-url'), {
+        banner: $value.val(),
+    }).done(function (data) {
+        if (data.result === 'success') {
+            openNoty('success', data.message);
+            $('#resultBanner').html(data.extra.status);
+        } else {
+            openNoty('error', 'Fehler beim Speichern, bitte versuchen');
+        }
+
+        $btn.html($htmlBtn).removeAttr('disabled');
+
+    }).fail(function () {
+        openNoty('error', 'Fehler beim Speichern, bitte versuchen');
+        $btn.removeAttr('disabled').html($htmlBtn);
+        return false;
+    })
+
+});
+
+$('.js-toggle-rad').on('click', function(e) {
+   e.preventDefault();
+
+    var $btn = $(this);
+    var $toSet = $btn.attr('data-set');
+    var $id = $btn.attr('data-id');
+    if($btn.attr('disabled')){
+        return;
+    }
+    var $htmlBtn = $btn.html();
+    $btn.attr('disabled', 'disabled').html('<i class="fa fa-spin fa-spinner"></i> Speichere...');
+
+    $.post($btn.attr('data-url'), {
+        toSet: $toSet,
+        id: $id,
+    }).done(function (data) {
+
+        if (data.result === 'success') {
+            openNoty('success', data.message);
+            $btn.removeClass('btn-success').removeClass('btn-danger').addClass('btn-'+data.extra.c).html('<i class="fa fa-'+data.extra.icon+'"></i> '+data.extra.text).attr('data-set', data.extra.set).removeAttr('disabled');
+            $('#resultRad').html(data.extra.status);
+        } else {
+            openNoty('error', 'Fehler beim Speichern, bitte versuchen');
+            $btn.removeAttr('disabled').html($htmlBtn);
+        }
+
+    }).fail(function () {
+        openNoty('error', 'Fehler beim Speichern, bitte versuchen');
+        $btn.removeAttr('disabled').html($htmlBtn);
+        return false;
+    })
+
+});
+
 $('#voucher-table').on('click','.js-toggle-use', function (e) {
 
     e.preventDefault();

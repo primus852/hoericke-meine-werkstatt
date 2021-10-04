@@ -2,11 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Survey;
+use App\Entity\SeasonSettings;
 use App\Entity\Voucher;
 use App\Util\SurveyManager;
-use DateTime;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,11 +17,11 @@ class BackendController extends AbstractController
     /**
      * @Security("is_granted('ROLE_USER')")
      * @Route("/admin/gutscheine", name="backendVoucher")
-     * @param ObjectManager $em
+     * @param EntityManagerInterface $em
      * @return Response
      * @throws Exception
      */
-    public function voucher(ObjectManager $em)
+    public function voucher(EntityManagerInterface $em)
     {
         return $this->render(
             'default/voucher.html.twig', array(
@@ -32,21 +31,76 @@ class BackendController extends AbstractController
 
     /**
      * @Security("is_granted('ROLE_USER')")
-     * @Route("/admin/dashboard", name="backendDashboard")
-     * @param ObjectManager $em
+     * @Route("/admin/saisons", name="backendToggles")
+     * @param EntityManagerInterface $em
      * @return Response
      * @throws Exception
      */
-    public function dashboard(ObjectManager $em)
+    public function saisons(EntityManagerInterface $em)
+    {
+
+        $settings = $em->getRepository(SeasonSettings::class)->find(1);
+        if ($settings === null) {
+            $settings = new SeasonSettings();
+            $settings->setCurrentBanner('her');
+            $settings->setRadwechselEnabled(true);
+            $em->persist($settings);
+            try {
+                $em->flush();
+            } catch (Exception $e) {
+                throw new Exception('MYSQL_ERROR');
+            }
+        }
+
+        $availableBanners = array(
+            'fru' => 'Frühling',
+            'som' => 'Sommer',
+            'her' => 'Herbst',
+            'win' => 'Winter'
+        );
+
+        switch ($settings->getCurrentBanner()) {
+            case 'som':
+                $enabledBanner = 'Sommer';
+                break;
+            case 'fru':
+                $enabledBanner = 'Frühling';
+                break;
+            case 'her':
+                $enabledBanner = 'Herbst';
+                break;
+            case 'win':
+                $enabledBanner = 'Winter';
+                break;
+            default:
+                $enabledBanner = 'Herbst';
+        }
+
+        return $this->render(
+            'default/saisons.html.twig', array(
+            'settings' => $settings,
+            'enabledBanner' => $enabledBanner,
+            'availableBanners' => $availableBanners
+        ));
+    }
+
+    /**
+     * @Security("is_granted('ROLE_USER')")
+     * @Route("/admin/dashboard", name="backendDashboard")
+     * @param EntityManagerInterface $em
+     * @return Response
+     * @throws Exception
+     */
+    public function dashboard(EntityManagerInterface $em)
     {
 
         $sm = new SurveyManager($em, 3);
 
-        try{
+        try {
             $s = $sm->list();
             $chart = $sm->charts($s);
             $hours = $sm->chart_hours();
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return $this->render(
                 'default/error.html.twig', array(
                     'message' => $e->getMessage(),

@@ -6,7 +6,8 @@ namespace App\Util;
 
 use App\Entity\Survey;
 use DateTime;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectManager;
 use Exception;
 
 class SurveyManager
@@ -18,10 +19,10 @@ class SurveyManager
 
     /**
      * SurveyManager constructor.
-     * @param ObjectManager $em
+     * @param EntityManagerInterface $em
      * @param int $limit
      */
-    public function __construct(ObjectManager $em, int $limit = 0)
+    public function __construct(EntityManagerInterface $em, int $limit = 0)
     {
         $this->em = $em;
         $this->limit = $limit;
@@ -105,7 +106,7 @@ class SurveyManager
                 $values['q' . $i . '_9'],
                 $values['q' . $i . '_10'],
             );
-            $avg = round($values['q' . $i . '_sum'] / count($results), 2);
+            $avg = count($results) > 0 ? round($values['q' . $i . '_sum'] / count($results), 2) : 0;
 
             $a['q' . $i . '_avg'] = array(
                 $avg,

@@ -1,0 +1,65 @@
+{% extends 'baseBackend.html.twig' %}
+
+{% block body %}
+    <main id="main">
+        <div class="overlay"></div>
+        <header class="header">
+            <h1 class="page-title">
+                <a class="sidebar-toggle-btn trigger-toggle-sidebar">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line line-angle1"></span>
+                    <span class="line line-angle2"></span>
+                </a>Übersicht
+            </h1>
+        </header>
+        <div id="main-nano-wrapper" class="nano">
+            <div class="nano-content" id="perfectScroll">
+                <div class="container-fluid">
+                    <div class="message-container">
+                        <div class="message-box">
+                            <div class="message">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="form-group mb-2">
+                                            <label for="selectBanner">Banner wählen (aktuell: <strong><span id="resultBanner">{{ enabledBanner }}</span></strong>)</label>
+                                            <select class="form-control" id="selectBanner">
+                                                {% for key, banner in availableBanners %}
+                                                    <option {{ banner == enabledBanner ? 'selected' : '' }} value="{{ key }}">{{ banner }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <a href="#" data-url="{{ path('ajaxToggleBanner') }}" class="btn btn-primary mb-2 js-change-banner">Speichern</a>
+                                    </div>
+                                    <div class="col-3">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-6" id="radSettings">
+                                        <label for="selectRadwechsel">Radwechsel anzeigen (aktuell: <strong><span id="resultRad">{{ settings.radwechselEnabled ? 'an' : 'aus' }}</span></strong>)</label>
+                                        <br />
+                                        {% if not settings.radwechselEnabled %}
+                                            <a href="#" data-url="{{ path('ajaxToggleRad') }}" data-id="{{ settings.id }}" data-set="enable" class="btn btn-success btn-sm js-toggle-rad"><i class="fa fa-check"></i> aktivieren</a>
+                                        {% else %}
+                                            <a href="#" data-url="{{ path('ajaxToggleRad') }}" data-id="{{ settings.id }}" data-set="disable" class="btn btn-danger btn-sm js-toggle-rad"><i class="fa fa-remove"></i> deaktivieren</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div>
+    </main>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        var GetNav = "contentSaisons";
+    </script>
+{% endblock javascripts %}
