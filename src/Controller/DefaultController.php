@@ -85,10 +85,18 @@ class DefaultController extends AbstractController
 /**
      * @Route("/onlinebuchung", name="onlinebuchung")
      */
-    public function onlinebuchung()
+    public function onlinebuchung(EntityManagerInterface $em)
     {
+
+        $settings = $em->getRepository(SeasonSettings::class)->find(1);
+        if($settings === null){
+            $reifenEnabled = true;
+        }else{
+            $reifenEnabled = $settings->getRadwechselEnabled();
+        }
+
         return $this->render('default/onlinebuchung.html.twig', [
-            'reifenEnabled' => true,
+            'reifenEnabled' => $reifenEnabled,
         ]);
     }
 
