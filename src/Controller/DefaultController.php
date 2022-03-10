@@ -71,6 +71,7 @@ class DefaultController extends AbstractController
         ]);
     }
 
+    
     /**
      * @Route("/kontakt", name="kontakt")
      */
@@ -79,6 +80,18 @@ class DefaultController extends AbstractController
         return $this->render('default/kontakt.html.twig', [
         ]);
     }
+
+
+/**
+     * @Route("/onlinebuchung", name="onlinebuchung")
+     */
+    public function onlinebuchung()
+    {
+        return $this->render('default/onlinebuchung.html.twig', [
+            'reifenEnabled' => true,
+        ]);
+    }
+
 
     /**
      * @Route("/impressum", name="impressum")
