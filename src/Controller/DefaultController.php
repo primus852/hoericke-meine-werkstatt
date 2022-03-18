@@ -131,6 +131,35 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("/tuevtag", name="tuevtag")
+     */
+    public function tuevtag(EntityManagerInterface $em)
+    {
+       
+        return $this->render('default/tuevtag.html.twig', [
+        ]);
+    }
+        /**
+     * @Route("/tuevwarte", name="tuevwarte")
+     */
+    public function tuevwarte(EntityManagerInterface $em)
+    {
+       
+        return $this->render('default/tuevwarte.html.twig', [
+        ]);
+    }
+
+            /**
+     * @Route("/unfallbesichtigung", name="unfallbesichtigung")
+     */
+    public function unfallbesichtigung(EntityManagerInterface $em)
+    {
+       
+        return $this->render('default/unfallbesichtigung.html.twig', [
+        ]);
+    }
+
+    /**
      * @Route("/sitemap.xml", name="sitemap")
      */
     public function sitemapAction()
