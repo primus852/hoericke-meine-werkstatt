@@ -54,6 +54,8 @@
     <link href="{{ asset('assets/css/sticky.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/mitscom.min.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
     {% block stylesheets %}{% endblock %}
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
 
@@ -368,5 +370,25 @@
 <script src="{{ asset('assets/js/map.min.js') }}"></script>
 {% block javascripts %}{% endblock %}
 <script src="{{ asset('assets/js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#ec6607"
+    },
+    "button": {
+      "background": "#023878"
+    }
+  },
+  "theme": "edgeless",
+  "content": {
+    "message": "Diese Webseite verwendet technische Cookies.",
+    "dismiss": "Verstanden",
+    "link": "Datenschutz",
+    "href": "https://hoerickemeinewerkstatt.de/assets/pdf/Hoericke_Datenschutz.pdf"
+  }
+});
+</script>
 </body>
 </html>
