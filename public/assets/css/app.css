@@ -8,6 +8,36 @@
 /* BASIC
 **************************************/
 
+@font-face {
+    font-family: 'Work Sans';
+    src: url('../fonts/WorkSans-VariableFont_wght.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Roboto Thin';
+    src: url('../fonts/Roboto-Thin.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../fonts/Roboto-Light.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-VariableFont_wght.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../fonts/JosefinSans-VariableFont_wght.ttf')  format('truetype')
+}
+
 body {
     font-size: 14px;
     line-height: 26px;
