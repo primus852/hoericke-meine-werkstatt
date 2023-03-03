@@ -1,13 +1,20 @@
 .pinned{
     position:fixed;
     height:590px;
-    top:120px;
+    top:186px;
     width:215px;
     right:15px;
     background:transparent url("../img/schnappchen_allg.png");
     margin:0;
     z-index:15
 }
+
+.pinned-eu{
+    top:120px;
+    height:56px;
+    background:transparent url("../img/schnappchen_allg.png") no-repeat center;
+}
+
 .pinned-banner{
     position:fixed;
     height:85px;
