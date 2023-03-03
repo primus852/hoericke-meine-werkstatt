@@ -1,36 +1,32 @@
-
-.pinned {
-    position: fixed;
-    height: 590px;
-    top: 120px;
+.pinned{
+    position:fixed;
+    height:590px;
+    top:120px;
     width:215px;
     right:15px;
-    background: transparent url("../img/schnappchen_allg.png");
-    margin: 0;
-    z-index: 15;
+    background:transparent url("../img/schnappchen_allg.png");
+    margin:0;
+    z-index:15
 }
-
-.pinned-banner {
-    position: fixed;
-    height: 109px;
-    top: 5px;
+.pinned-banner{
+    position:fixed;
+    height:85px;
+    top:5px;
     width:109px;
     right:5px;
-    background: transparent url("../img/partner/WDV_2021.png");
-    margin: 0;
-    z-index: 25;
+    background:transparent url("../img/partner/WDV.png");
+    margin:0;
+    z-index:25
 }
-
-.p-fru {
-    background: transparent url("../img/schnappchen_FRU.png") !important;
+.p-fru{
+    background:transparent url("../img/schnappchen_FRU.png") !important
 }
-.p-som {
-    background: transparent url("../img/schnappchen_SOM.png") !important;
+.p-som{
+    background:transparent url("../img/schnappchen_SOM.png") !important
 }
-.p-her {
-    background: transparent url("../img/schnappchen_HE.png") !important;
+.p-her{
+    background:transparent url("../img/schnappchen_HE.png") !important
 }
-.p-win {
-    background: transparent url("../img/schnappchen_WIN.png") !important;
+.p-win{
+    background:transparent url("../img/schnappchen_WIN.png") !important
 }
-
