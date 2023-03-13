@@ -2314,6 +2314,9 @@ a:focus,
     .pinned-banner{
         display: none;
     }
+    .pinned-eu{
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
