@@ -1,39 +1,57 @@
-.pinned{
-    position:fixed;
-    height:590px;
-    top:186px;
-    width:215px;
-    right:15px;
-    background:transparent url("../img/schnappchen_allg.png");
-    margin:0;
-    z-index:15
+.pinned {
+    position: fixed;
+    height: 590px;
+    top: 186px;
+    width: 215px;
+    right: 15px;
+    background: transparent url("../img/schnappchen_allg.png");
+    margin: 0;
+    z-index: 15
 }
 
-.pinned-eu{
-    top:120px;
-    height:56px;
-    background:transparent url("../img/EFRE_Logo_small.png") no-repeat center;
+.pinned-eu {
+    position: fixed;
+    width: 215px;
+    left: 15px;
+    margin: 0;
+    z-index: 15;
+    top: 120px;
+    height: 260px;
+    background: transparent url("../img/EFRE_Logo_small.png") no-repeat top;
 }
 
-.pinned-banner{
-    position:fixed;
-    height:85px;
-    top:5px;
-    width:109px;
-    right:5px;
-    background:transparent url("../img/partner/WDV.png");
-    margin:0;
-    z-index:25
+.text-eu {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1;
+    position: absolute;
+    bottom: 0;
 }
-.p-fru{
-    background:transparent url("../img/schnappchen_FRU.png") !important
+
+.pinned-banner {
+    position: fixed;
+    height: 85px;
+    top: 5px;
+    width: 109px;
+    right: 5px;
+    background: transparent url("../img/partner/WDV.png");
+    margin: 0;
+    z-index: 25
 }
-.p-som{
-    background:transparent url("../img/schnappchen_SOM.png") !important
+
+.p-fru {
+    background: transparent url("../img/schnappchen_FRU.png") !important
 }
-.p-her{
-    background:transparent url("../img/schnappchen_HE.png") !important
+
+.p-som {
+    background: transparent url("../img/schnappchen_SOM.png") !important
 }
-.p-win{
-    background:transparent url("../img/schnappchen_WIN.png") !important
+
+.p-her {
+    background: transparent url("../img/schnappchen_HE.png") !important
+}
+
+.p-win {
+    background: transparent url("../img/schnappchen_WIN.png") !important
 }
