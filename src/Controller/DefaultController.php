@@ -71,6 +71,7 @@ class DefaultController extends AbstractController
         ]);
     }
 
+    
     /**
      * @Route("/kontakt", name="kontakt")
      */
@@ -79,6 +80,26 @@ class DefaultController extends AbstractController
         return $this->render('default/kontakt.html.twig', [
         ]);
     }
+
+
+/**
+     * @Route("/onlinebuchung", name="onlinebuchung")
+     */
+    public function onlinebuchung(EntityManagerInterface $em)
+    {
+
+        $settings = $em->getRepository(SeasonSettings::class)->find(1);
+        if($settings === null){
+            $reifenEnabled = true;
+        }else{
+            $reifenEnabled = $settings->getRadwechselEnabled();
+        }
+
+        return $this->render('default/onlinebuchung.html.twig', [
+            'reifenEnabled' => $reifenEnabled,
+        ]);
+    }
+
 
     /**
      * @Route("/impressum", name="impressum")
@@ -106,6 +127,35 @@ class DefaultController extends AbstractController
         }
 
         return $this->render('default/reifen.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/tuevtag", name="tuevtag")
+     */
+    public function tuevtag(EntityManagerInterface $em)
+    {
+       
+        return $this->render('default/tuevtag.html.twig', [
+        ]);
+    }
+        /**
+     * @Route("/tuevwarte", name="tuevwarte")
+     */
+    public function tuevwarte(EntityManagerInterface $em)
+    {
+       
+        return $this->render('default/tuevwarte.html.twig', [
+        ]);
+    }
+
+            /**
+     * @Route("/unfallbesichtigung", name="unfallbesichtigung")
+     */
+    public function unfallbesichtigung(EntityManagerInterface $em)
+    {
+       
+        return $this->render('default/unfallbesichtigung.html.twig', [
         ]);
     }
 

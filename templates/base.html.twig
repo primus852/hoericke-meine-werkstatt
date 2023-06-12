@@ -4,11 +4,15 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145326485-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-145326485-1');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145326485-1');
     </script>
 
     <!-- Basic -->
@@ -25,36 +29,37 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('apple-touch-icon-57x57.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('apple-touch-icon-144x144.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ asset('apple-touch-icon-60x60.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('apple-touch-icon-120x120.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset('apple-touch-icon-76x76.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset('apple-touch-icon-152x152.png') }}" />
-    <link rel="icon" type="image/png" href="{{ asset('favicon-196x196.png') }}" sizes="196x196" />
-    <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}" sizes="96x96" />
-    <link rel="icon" type="image/png" href="{{ asset('favicon-32x32.png') }}" sizes="32x32" />
-    <link rel="icon" type="image/png" href="{{ asset('favicon-16x16.png') }}" sizes="16x16" />
-    <link rel="icon" type="image/png" href="{{ asset('favicon-128.png') }}" sizes="128x128" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('apple-touch-icon-57x57.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('apple-touch-icon-144x144.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ asset('apple-touch-icon-60x60.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('apple-touch-icon-120x120.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset('apple-touch-icon-76x76.png') }}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset('apple-touch-icon-152x152.png') }}"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-196x196.png') }}" sizes="196x196"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-32x32.png') }}" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-16x16.png') }}" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="{{ asset('favicon-128.png') }}" sizes="128x128"/>
     <meta name="application-name" content="Kfz Meisterbetrieb Höricke in Teltow"/>
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="{{ asset('mstile-144x144.png') }}" />
-    <meta name="msapplication-square70x70logo" content="{{ asset('mstile-70x70.png') }}" />
-    <meta name="msapplication-square150x150logo" content="{{ asset('mstile-150x150.png') }}" />
-    <meta name="msapplication-wide310x150logo" content="{{ asset('mstile-310x150.png') }}" />
-    <meta name="msapplication-square310x310logo" content="{{ asset('mstile-310x310.png') }}" />
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="msapplication-TileImage" content="{{ asset('mstile-144x144.png') }}"/>
+    <meta name="msapplication-square70x70logo" content="{{ asset('mstile-70x70.png') }}"/>
+    <meta name="msapplication-square150x150logo" content="{{ asset('mstile-150x150.png') }}"/>
+    <meta name="msapplication-wide310x150logo" content="{{ asset('mstile-310x150.png') }}"/>
+    <meta name="msapplication-square310x310logo" content="{{ asset('mstile-310x310.png') }}"/>
 
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i,600,700" rel="stylesheet">
     <link href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/animate.css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/simplelightbox/dist/simplelightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('node_modules/jquery-roadmap/dist/jquery.roadmap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/sticky.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/sticky.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/mitscom.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
 
     {% block stylesheets %}{% endblock %}
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
@@ -72,7 +77,9 @@
             transition: 0.3s;
         }
 
-        #myImg:hover {opacity: 0.7;}
+        #myImg:hover {
+            opacity: 0.7;
+        }
 
         /* The Modal (background) */
         .modal {
@@ -85,8 +92,8 @@
             width: 100%; /* Full width */
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
         }
 
         /* Modal Content (image) */
@@ -118,13 +125,21 @@
         }
 
         @-webkit-keyframes zoom {
-            from {-webkit-transform:scale(0)}
-            to {-webkit-transform:scale(1)}
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
         }
 
         @keyframes zoom {
-            from {transform:scale(0)}
-            to {transform:scale(1)}
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
         }
 
         /* The Close Button */
@@ -146,7 +161,7 @@
         }
 
         /* 100% Image Width on Smaller Screens */
-        @media only screen and (max-width: 700px){
+        @media only screen and (max-width: 700px) {
             .modal-content {
                 width: 100%;
             }
@@ -157,6 +172,18 @@
 <body>
 <div id="preloader">
     <img class="preloader" src="{{ asset('assets/img/loader.gif') }}" alt="Hoericke Loader">
+</div>
+
+<div class="pinned-eu">
+    <div class="text-eu">
+        <strong>BIG-Digital-Implementierung und Schulung: Digitalisierung der Geschäftsprozesse</strong>
+        <br />
+        <br />
+        Dieses Projekt wird aus Mitteln des Europäischen Fonds für regionale Entwicklung und des Lande Brandenburg
+        gefördert.<br />
+        Ziel dieses Projekt ist es, sämtliche Anwendungen, Abläufe und Prozesse, von der Auftragsannahme bis zur
+        Fahrzeugherausgabe, zu digitalisieren.
+    </div>
 </div>
 
 <!--- UPDATE BANNER -->
@@ -170,7 +197,7 @@
 <div id="wrapper">
 
     <header class="header">
-        <div class="container">
+        <div class="container" style="max-width:1270px !important;">
             <nav class="navbar navbar-expand-lg">
                 <a href="#" class="toggle-mnu d-lg-none"><span></span></a>
                 <div class="collapse navbar-collapse" id="matildamenu">
@@ -180,6 +207,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('leistungen') }}">Leistungen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('onlinebuchung') }}">Onlinebuchung</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('werkstatt') }}">Die Werkstatt</a>
@@ -195,12 +225,17 @@
                         </li>
                     </ul>
                     <div class="social">
-                        <a href="https://www.facebook.com/pages/H%C3%B6ricke-MEINE-Werkstatt/189769644530576?fref=ts" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="https://wa.me/004933284799090" target="_blank" data-toggle="tooltip" data-placement="bottom" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/pages/H%C3%B6ricke-MEINE-Werkstatt/189769644530576?fref=ts"
+                           target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i
+                                    class="fa fa-facebook"></i></a>
+                        <a href="https://wa.me/004933284799090" target="_blank" data-toggle="tooltip"
+                           data-placement="bottom" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
                     </div>
                     <div class="menu-right">
-                        <a href="tel:+4933284799090" data-toggle="tooltip" data-placement="bottom" title="Jetzt Anrufen"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a>
-                        <a href="mailto:info@hoerickemeinewerkstatt.de" data-toggle="tooltip" data-placement="bottom" title="Jetzt Schreiben"><i class="fa fa-envelope"></i> info@hoerickemeinewerkstatt.de</a>
+                        <a href="tel:+4933284799090" data-toggle="tooltip" data-placement="bottom"
+                           title="Jetzt Anrufen"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a>
+                        <a href="mailto:info@hoerickemeinewerkstatt.de" data-toggle="tooltip" data-placement="bottom"
+                           title="Jetzt Schreiben"><i class="fa fa-envelope"></i> info@hoerickemeinewerkstatt.de</a>
                     </div>
                 </div>
             </nav>
@@ -212,7 +247,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="logo">
-                        <a href="{{ path('default') }}"><img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="Höricke Meine Werkstatt Logo"></a>
+                        <a href="{{ path('default') }}"><img src="{{ asset('assets/img/logo.png') }}" class="img-fluid"
+                                                             alt="Höricke Meine Werkstatt Logo"></a>
                     </div><!-- end logo -->
                 </div>
             </div><!-- end row -->
@@ -223,18 +259,22 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-3 text-center">
-                    <img src="{{ asset('assets/img/partner/DEVK-Logo.png') }}" class="img-thumbnail" alt="DEVK Logo" style="max-height:90px;margin-bottom:10px;">
+                    <img src="{{ asset('assets/img/partner/DEVK-Logo.png') }}" class="img-thumbnail" alt="DEVK Logo"
+                         style="max-height:90px;margin-bottom:10px;">
                 </div>
                 <div class="col-12 col-md-3 text-center">
-                    <img src="{{ asset('assets/img/partner/huk.jpg') }}" class="img-thumbnail" alt="HUK Logo" style="max-height:90px;margin-bottom:10px;">
+                    <img src="{{ asset('assets/img/partner/huk.jpg') }}" class="img-thumbnail" alt="HUK Logo"
+                         style="max-height:90px;margin-bottom:10px;">
                     <br>
                     <p style="color: #999999;"><b>Für KFZ Versicherungen</b></p>
                 </div>
                 <div class="col-12 col-md-3 text-center">
-                    <img src="{{ asset('assets/img/partner/profiservice.png') }}" class="img-thumbnail" alt="ProfiService Logo" style="max-height:90px;margin-bottom:10px;">
+                    <img src="{{ asset('assets/img/partner/profiservice.png') }}" class="img-thumbnail"
+                         alt="ProfiService Logo" style="max-height:90px;margin-bottom:10px;">
                 </div>
                 <div class="col-12 col-md-3 text-center">
-                    <img src="{{ asset('assets/img/partner/tuev-rheinland.png') }}" class="img-thumbnail" alt="TÜV Logo" style="max-height:90px;margin-bottom:10px;">
+                    <img src="{{ asset('assets/img/partner/tuev-rheinland.png') }}" class="img-thumbnail" alt="TÜV Logo"
+                         style="max-height:90px;margin-bottom:10px;">
                 </div>
             </div>
         </div>
@@ -257,7 +297,8 @@
                             <br/>
                             <a href="tel:+4933284799090"><i class="fa fa-phone"></i> 03328 / 47 99 09-0</a><br/>
                             <a href="#"><i class="fa fa-fax"></i> 03328 / 47 99 09-99</a><br/>
-                            <a href="mailto:info@hoerickemeinewerkstatt.de"><i class="fa fa-envelope"></i> info@hoerickemeinewerkstatt.de</a>
+                            <a href="mailto:info@hoerickemeinewerkstatt.de"><i class="fa fa-envelope"></i>
+                                info@hoerickemeinewerkstatt.de</a>
 
 
                         </div>
@@ -349,7 +390,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        &copy; {{ "now"|date('Y') }} <span class="d-none d-lg-inline d-xl-inline">Höricke meine Werkstatt GmbH</span><span class="d-lg-none d-xl-none">Höricke</span> | <a href="{{ path('impressum') }}">Impressum</a> | <a href="{{ asset('assets/pdf/Hoericke_Datenschutz.pdf') }}" target="_blank">Datenschutz</a> | <a href="{{ asset('assets/pdf/AGB.pdf') }}">AGB</a> | <span class="d-none d-lg-inline d-xl-inline">Made with <i class="fa fa-heart"></i> by <a href="https://www.mitscom.de" target="_blank">MITSCom</a> | <a href="{{ path('backendDashboard') }}">Admin</a></span>
+                        &copy; {{ "now"|date('Y') }} <span class="d-none d-lg-inline d-xl-inline">Höricke meine Werkstatt GmbH</span><span
+                                class="d-lg-none d-xl-none">Höricke</span> | <a
+                                href="{{ path('impressum') }}">Impressum</a> | <a
+                                href="{{ asset('assets/pdf/Hoericke_Datenschutz.pdf') }}"
+                                target="_blank">Datenschutz</a> | <a href="{{ asset('assets/pdf/AGB.pdf') }}">AGB</a> |
+                        <span class="d-none d-lg-inline d-xl-inline">Made with <i class="fa fa-heart"></i> by <a
+                                    href="https://www.mitscom.de" target="_blank">MITSCom</a> | <a
+                                    href="{{ path('backendDashboard') }}">Admin</a></span>
                     </div>
                 </div>
             </div>
@@ -367,5 +415,25 @@
 <script src="{{ asset('assets/js/map.min.js') }}"></script>
 {% block javascripts %}{% endblock %}
 <script src="{{ asset('assets/js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#ec6607"
+      },
+      "button": {
+        "background": "#023878"
+      }
+    },
+    "theme": "edgeless",
+    "content": {
+      "message": "Diese Webseite verwendet technische Cookies.",
+      "dismiss": "Verstanden",
+      "link": "Datenschutz",
+      "href": "https://hoerickemeinewerkstatt.de/assets/pdf/Hoericke_Datenschutz.pdf"
+    }
+  });
+</script>
 </body>
 </html>

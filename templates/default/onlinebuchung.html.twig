@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Onlinebuchung{% endblock %}
+
+{% block body %}
+
+    <section class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="content col-lg-12">
+                    
+                    <!--- Corona -->
+                    <div class="blog-box row list-style clearfix">
+                      
+
+                        <!--- RADWECHSELTERMIN ONLINE -->
+                        {% if reifenEnabled %}
+                            <div class="blog-box row list-style clearfix not-temp-hidden">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <div class="blog-media">
+                                        <img src="{{ asset('assets/img/galerie/SAM_7242.JPG') }}" alt="Höricke Radwechsel"
+                                             class="img-fluid img-thumbnail">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <div class="blog-desc">
+                                        <h4>Radwechseltermin online</h4>
+                                        <p>
+                                            Wenn ihr euren Wunschtermin noch nicht gemacht habt, aber irgendwie nicht zum Anrufen kommt,
+                                            bucht hier direkt euren Radwechseltermin online.
+                                        </p>
+                                         <span style="font-style: italic;">Schnell &amp; unkompliziert</span>
+                                        
+                                        <div class="blog-bottom">
+                                            <a href="{{ path('reifen') }}" class="btn btn-primary">Jetzt buchen</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <!--- TÜV-TAGESTERMIN ONLINE /-->
+
+                         <div class="blog-box row list-style clearfix not-temp-hidden">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <div class="blog-media">
+                                        <img src="{{ asset('assets/img/partner/tuev-rheinland.png') }}" alt="Hoericke Tuev"
+                                             class="img-fluid img-thumbnail">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <div class="blog-desc">
+                                        <h4>TÜV-Tagestermin online</h4>
+                                        <p>
+                                            Euer Auto ist wieder zum TÜV dran, ihr seid euch aber nicht so sicher, ob alles in Ordnung ist?
+                                            Dann sollten wir vor dem TÜV einen Vorabcheck machen, sicher ist sicher.
+                                            Onlinetermine könnt ihr euch ab sofort über untenstehenden Link buchen, auch außerhalb unserer Geschäftszeiten – zu jeder Tages- und Nachtzeit.
+                                            Denkt aber bitte daran, es handelt sich dabei um Tagestermine, also vor Ort warten ist nicht möglich. Wir planen immer ein bisschen Reparaturzeit mit ein.
+
+                                        </p>
+                                         <span style="font-style: italic;">Schnell &amp; unkompliziert</span>
+                                         <div class="blog-bottom">
+                                         <a href="{{ path('tuevtag') }}" class="btn btn-primary">Jetzt buchen</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!--- TÜV-WARTETERMIN ONLINE /-->
+
+                         <div class="blog-box row list-style clearfix not-temp-hidden">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <div class="blog-media">
+                                        <img src="{{ asset('assets/img/partner/tuev-rheinland.png') }}" alt="Hoericke Tuev"
+                                             class="img-fluid img-thumbnail">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <div class="blog-desc">
+                                        <h4>TÜV-Wartetermin online</h4>
+                                        <p>
+                                            Ab sofort könnt ihr euch hier einen Wartetermin für den TÜV online buchen, diese begehrten Termine stehen euch immer Donnerstag zwischen 16.00 – 18.00 Uhr zur Verfügung.
+                                            Einfach eine halbe Stunde Zeit mitbringen, Tässchen Kaffee genießen und mit frischen TÜV, im besten Fall, vom Hof fahren.
+ 
+                                        </p>
+                                        <span style="font-style: italic;">Schnell &amp; unkompliziert</span>
+                                        <div class="blog-bottom">
+                                            <a href="{{ path('tuevwarte') }}" class="btn btn-primary">Jetzt buchen</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!--- UNFALLBESICHTIGUNG-WARTETERMIN ONLINE /-->
+
+                         <div class="blog-box row list-style clearfix not-temp-hidden">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <div class="blog-media">
+                                        <img src="{{ asset('assets/img/galerie/SAM_3538.JPG') }}" alt="Hoericke Unfall"
+                                             class="img-fluid img-thumbnail">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <div class="blog-desc">
+                                        <h4>Unfallschadensbesichtigung Termin online</h4>
+                                        <p>
+                                            Ab sofort, könnt ihr euch euren Termin für die Unfallbesichtigung online buchen, es handelt sich dabei um Termine bei denen ihr vor Ort bleibt. Den nötigen Termin für die Reparatur machen wir vor Ort, nachdem wir den Schadensumfang einschätzen konnten.
+                                            Klickt einfach auf den untenstehenden Link und ihr werdet direkt zur Terminbuchung weitergeleitet.
+                                            Besichtigungstermine stehen euch immer zwischen 09.00 – 18.00 Uhr zur Verfügung.
+ 
+                                        </p>
+                                        <span style="font-style: italic;">Schnell &amp; unkompliziert</span>
+                                        <div class="blog-bottom">
+                                            <a href="{{ path('unfallbesichtigung') }}" class="btn btn-primary">Jetzt buchen</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                    </div>
+                </div>
+            </div>
+    </section>
+{% endblock %}

@@ -30,7 +30,6 @@
     <meta name="msapplication-square310x310logo" content="{{ asset('mstile-310x310.png') }}"/>
 
     <!-- LOAD CSS FILES -->
-    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('node_modules/animate.css/animate.min.css') }}">
@@ -43,6 +42,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/reset.min.css') }}"/>
     {% block stylesheets %}{% endblock %}
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/overrides.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 </head>
 <body>
 
@@ -101,5 +101,25 @@
 <script type="text/javascript" src="{{ asset('node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 {% block javascripts %}{% endblock %}
 <script src="{{ asset('assets/js/backend.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#ec6607"
+    },
+    "button": {
+      "background": "#023878"
+    }
+  },
+  "theme": "edgeless",
+  "content": {
+    "message": "Diese Webseite verwendet technische Cookies.",
+    "dismiss": "Verstanden",
+    "link": "Datenschutz",
+    "href": "https://hoerickemeinewerkstatt.de/assets/pdf/Hoericke_Datenschutz.pdf"
+  }
+});
+</script>
 </body>
 </html>
