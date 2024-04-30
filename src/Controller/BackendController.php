@@ -56,7 +56,8 @@ class BackendController extends AbstractController
             'fru' => 'Frühling',
             'som' => 'Sommer',
             'her' => 'Herbst',
-            'win' => 'Winter'
+            'win' => 'Winter',
+            'off' => 'Keiner',
         );
 
         switch ($settings->getCurrentBanner()) {
