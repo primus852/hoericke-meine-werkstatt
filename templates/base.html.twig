@@ -187,7 +187,9 @@
 </div>
 
 <!--- UPDATE BANNER -->
+{%  if banner.getBanner() !== 'off' %}
 <span class="pinned p-{{ banner.getBanner() }}"></span>
+{% endif %}
 <!--- UPDATE BANNER /--->
 
 <!--- UPDATE WERKSTATT -->

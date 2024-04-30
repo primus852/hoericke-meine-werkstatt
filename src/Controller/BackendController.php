@@ -72,6 +72,9 @@ class BackendController extends AbstractController
             case 'win':
                 $enabledBanner = 'Winter';
                 break;
+            case 'off':
+                $enabledBanner = 'Keiner';
+                break;
             default:
                 $enabledBanner = 'Herbst';
         }
